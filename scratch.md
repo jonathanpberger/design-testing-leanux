@@ -1,5 +1,82 @@
 # TDD for Design Scratchpad
 
+# Agile Manifest Principles => Problems Agile Solves
+
+> Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+
+Customers aren't satisfied when product isn't delivered.
+
+> Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+
+Changing requirements hurts.
+
+> Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+
+Infrequent delivery hurts.
+
+> Business people and developers must work together daily throughout the project.
+
+Lack of communication bw dev and bness hurts.
+
+> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+
+Motivation wanes.
+
+> The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+
+Low-fidelity comms hurt.
+
+> Working software is the primary measure of progress.
+
+Time is wasted on distractions.
+
+> Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+
+Unsustainable pace hurts people and businesses.
+
+> Continuous attention to technical excellence and good design enhances agility.
+
+High cost of change is bad for business.
+
+> Simplicity--the art of maximizing the amount of work not done--is essential.
+
+Doing unnecessary work hurts.
+
+> The best architectures, requirements, and designs emerge from self-organizing teams.
+
+Seagull management hurts.
+
+> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+
+Sclerosis hurts.
+
+---
+
+## Shorter
+
+### Things that hurt:
+
+- Changing requirements
+- Seagull management
+- Low-fidelity (or lack of) communication
+- Doing unnecessary work
+- Infrequent delivery
+- Sclerotic process
+- Unsustainable pace
+
+### The Result:
+- Time is wasted on distractions
+- Motivation wanes
+- High cost of change is bad for business
+- Customers aren't satisfied
+
+
+
+
+
+
+---
+
 # Notes from when I was sleeping
 
 [x] multiple styles sheets? eg standard, jpb, etc.

@@ -276,3 +276,34 @@ Automated design testing can address a number of design pains, e.g.:
 [persona_dot_yml]: https://github.com/jonathanpberger/persona_dot_yml
 [symilaa]: http://rubygems.org/gems/symilaa
 [wraith]: https://github.com/BBC-News/wraith
+
+---
+
+# Resource Conversations
+[announcing Quixote on Reddit]: http://www.reddit.com/r/webdev/comments/2igzrs/hey_reddit_ive_been_working_on_a_prototype_for/
+[Quixote hackathon final report]: http://www.letscodejavascript.com/v3/blog/2014/10/quixote_final
+
+[Simon's CSS Testing talk - video]: http://thingsinjars.com/post/484/high-definition-css-testing/
+[Simon's CSS Testing talk - slides]:http://csste.st/slides
+[Simon as blog post]:http://www.creativebloq.com/css3/4-tools-automatic-css-testing-7133777
+
+
+[UX Recipes (a nice list of types of design)]: https://github.com/uxrecipe/uxrecipe.github.io
+[atomic design]:
+
+
+
+simon:
+List of tools, grouped by area
+
+### Syntax
+CSSLint
+### Per-project
+HTML Inspector
+GhostStory => aka Hardy
+###Reference Browser Comparison
+Web Consistency Testing (MogoTest)
+###Regression
+Image Diff (CSSCritic)
+Frozen DOM (cssert)
+GhostStory

@@ -44,23 +44,29 @@ Show of hands:
 ---
 
 # The Plan
-- Intro
+- Intro: Why TDD?
 - Theory of TDDesign
 - Methodology of TDDesign
-- Outro
+- Outro: What Next?
 
 ---
 
 class: center, middle, inverse
-# Intro
+# Intro: Why TDD?
+
+---
+class: center, middle
+name: problems
+# Developers had problems
+
+---
+## Shorter [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 
 ---
 
-
-## Developers had problems
-
---
+.small[
 ## Shorter [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+]
 
 .left-column-equal[
 
@@ -74,15 +80,34 @@ class: center, middle, inverse
 - Sclerotic process
 - Unsustainable pace
 
-]
-
-.right-column-equal[
-
 ### The Result:
 - Time is wasted on distractions
 - Motivation wanes
 - High cost of change is bad for business
 - Customers aren't satisfied
+
+]
+
+--
+
+.right-column-equal[
+
+### What "hurt" looks like:
+
+- Backlog churn
+- Changing requirements after the work is done
+- Not knowing what to build
+- Building the wrong thing
+- Monthly or Quarterly releases
+- broken process
+- late nights, weekends
+
+### What the Results look like:
+- Business asking "What are they doing?!"
+- Developers are bored and upset
+- Software is unresponsive to business needs
+- Customers aren't satisfied
+
 ]
 
 ---
@@ -127,8 +152,8 @@ layout: true
 
 ---
 layout: false
-
-## Designers have Problems
+class: center, middle
+# Designers have Problems
 
 --
 
@@ -138,16 +163,126 @@ layout: false
 
 ---
 
+
+.small[
+## The same things hurt Designers!
+]
+
+.left-column-equal[
+
+### Things that hurt:
+
+- Changing requirements
+- Seagull management
+- Low-fidelity (or lack of) communication
+- Doing unnecessary work
+- Infrequent delivery
+- Sclerotic process
+- Unsustainable pace
+
+### The Result:
+- Time is wasted on distractions
+- Motivation wanes
+- High cost of change is bad for business
+- Customers aren't satisfied
+
+]
+
+.right-column-equal[
+
+### What "hurt" looks like for designers:
+
+- Backlog churn
+- Changing requirements after the work is done
+- Not knowing what to design
+- Designing the wrong thing
+- Monthly or Quarterly releases
+- broken process
+- late nights, weekends
+
+### What the Results look like:
+- Business asking "What are they doing?!"
+- Designers are bored and upset
+- Design is unresponsive to business needs
+- Customers aren't satisfied
+
+]
+
+---
+
+layout: true
+# What *Might* that mean in practice?
+
+---
+
+## Always
+- √ Outside-In => User-Centered Design
+- √ Lower the cost of change => Design systems, not pages
+- √ shrink feedback loops => Regularly talk to users
+
+---
+
+## Every Week
+- √ Standups: doing it!
+- √ Retros: doing it!
+- √ IPMs => storywriting
+- √ release planning => Big Design Refactor
+
+---
+
+## Every Day
+- √ Pairing: doing it!
+- TDD: this talk
+- CI: 
+
+---
+layout: true
 ## What might automated testing look like for design?
 
+---
+
+## Lots of people are working on this
+- CSSTe.st
+
+---
+
+## Tend to be focused on a few approaches
+- testing CSS
+- screenshot diffing
+- linting
+
+---
+
+layout: false
+## What's missing?
 
 --
+
+These are concerned with testing CSS rather than testing *design*.
+
+---
+
+that's part of the picture, but not the whole thing
+
+
+
+
+
+???
+What are the benefits of TDD?
+
+---
 
 - What would it look like to have a more defined definition of "done" for design?
 - What if designers could refactor with impunity?
 
 ---
 
+# Interlude: ontology
+
+TODO: PUT ONTOLOGY HERE
+
+---
 # The Solution: TDD for Design
 
 --
@@ -167,7 +302,7 @@ for
 and
 ## try to build a testing pyramid for design.
 
----
+<!-- ---
 class: interlude
 
 # Interlude: Why Do I Care?
@@ -199,30 +334,13 @@ class: interlude
 So...
 
 # What is TDD?
-
+ -->
 ---
 
-## TDD: History
-
-<!-- TODO: EXPAND THIS -->
-
-- "rediscovered" by Kent Beck
--  mainframe era
-- XP Explained - modern history
-
-<http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
-<http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
-
----
-
-# TDD: Benefits
-
-> Kent Beck, who is credited with having developed or 'rediscovered'[1] the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.[2] -<http://en.wikipedia.org/wiki/Test-driven_development>
-
-
----
-
+layout: true
 ## Benefits of TDD
+
+---
 
 > - It gives me **confidence** that my code does what I think it does
 
@@ -235,11 +353,32 @@ So...
 [Paul Wilson](http://www.neo.com/2014/03/20/the-many-faces-of-test-driven-development)
 
 ---
+`s/code/product`
 
-## TDD Technique
-- Red
-- Green
-- Refactor
+> - It gives me **confidence** that my product does what I think it does
+
+> - It confers the **ability to refactor** product without the fear that I have broken something
+
+> - It encourages a testable, and hence **modular, design**
+
+> - The **tests describe the behavior** of the product
+
+---
+layout: false
+## TDD: History
+
+<!-- TODO: EXPAND THIS -->
+
+> Kent Beck, who is credited with having developed or 'rediscovered'[1] the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.[2] -<http://en.wikipedia.org/wiki/Test-driven_development>
+
+???
+
+- "rediscovered" by Kent Beck
+-  mainframe era
+- XP Explained - modern history
+
+<http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
+<http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
 
 ---
 
@@ -247,9 +386,10 @@ So...
 
 ---
 
-!["images/hamazon_item_page.png"]
+<!-- !["images/hamazon_item_page.png"]
 
 ---
+ -->
 
 **Let's say we're Pair Programming...**
 
@@ -354,10 +494,17 @@ Now here's the fun part. Remember how we said we already built the User Login sy
 
 ---
 
+### We broke suite!
 
-
+???
 We'll kick off the full test run, and it'll take a few minutes to run all the tests. Now's a great time to get up, stretch our legs, grab a drink, maybe play a game of ping pong. When we return, the test suite is red! It turns out that when we decremented Warehouse Inventory, we broke part of the warehouse management system that had already been written. Now we'll go fix our code (writing additional tests as necessary) and repeat the process until the test suite is green. Once suite is green, we can push our code to production with confidence that the software will act as expected. In this manner, we mitigate technical risks and let deployment be a purely business decision.
+---
 
+Fix it, run again, go green: Red, Green, Refactor.
+
+---
+
+I didn't go into detail here, but the Cuke tests drive out the Unit tests! Colud design testing do the same?
 
 ---
 class: interlude
@@ -382,8 +529,20 @@ class: interlude
 - technique
 
 ---
-
+class: center, middle
 # Pyramid Scheming
+
+???
+
+- test pyramid history: from QA, inverted
+- for our purposes: a model of how different tests fit into the picture
+
+what is it?, what do we usually call it?, how do we usually deliver it?, how could we test it?
+concept / visual language / metaphor (IA?)
+UX / wires
+
+CSS
+expression: final app
 
 ---
 
@@ -391,6 +550,8 @@ class: interlude
 - 1 ("Functional") Acceptance test
 - 10 Integration tests
 - 100 Unit tests
+
+???
 
 or
 
@@ -402,6 +563,9 @@ Unit
 
 ## Design Testing Pyramid
 
+- traditional user testing
+<!-- todo: bring in list from UX Recipes -->
+
 - Assert Design Decisions (cactus)
 - Control Regressions (green_onion)
 - Safely refactor bloated CSS (CSS Racionator)
@@ -412,15 +576,12 @@ Unit
 
 ---
 
+# Automation is important
 
-## Pyramid of types of design
+???
 
-what is it?, what do we usually call it?, how do we usually deliver it?, how could we test it?
-concept / visual language / metaphor (IA?)
-UX / wires
-
-CSS
-expression: final app
+It lets us build CI
+we can start w/ something trivial, and add to it as we learn
 
 ---
 

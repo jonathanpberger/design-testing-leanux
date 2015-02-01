@@ -1,0 +1,70 @@
+/****************** Footer ****************/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,900);
+.remark-slide-footer {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  position: absolute;
+  bottom: 0;
+  background-color: #222;
+  color: #fcfcfc;
+  width: 100%;
+  margin: -1em -4em; /*counteract padding on top element */
+  height: 4em;
+  line-height: 4em;
+}
+
+.footer a,
+.footer a:visited {
+  text-decoration: none;
+  color: #fcfcfc;
+}
+
+.remark-slide-footer .logo {
+  position: absolute;
+  left: 1em;
+  
+}
+.remark-slide-footer .twitter {
+  position: absolute;
+  left: 44%;
+  line-height: 3em;
+  
+}
+.remark-slide-footer .hashtag {
+  position: absolute;
+  right: 1em;
+  line-height: 3em;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+
+.left-column-equal h2:last-of-type, 
+.left-column-equal h3:last-child, 
+.left-column h2:last-of-type, 
+.left-column h3:last-child {
+  color: #000;
+}
+
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+
+.left-column-equal {
+  width: 50%;
+  height: 92%;
+  float: left;
+}
+
+.right-column-equal {
+  width: 50%;
+  float: right;
+  padding-top: 1em;
+}

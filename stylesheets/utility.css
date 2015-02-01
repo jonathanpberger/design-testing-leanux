@@ -1,15 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-
-body {
-  font-family: 'Droid Serif';
-  font-size: medium;
-}
-h1, h2, h3 {
-  font-family: 'Yanone Kaffeesatz';
-  font-weight: 400;
-  margin-bottom: 0;
-}
+/****************** utility ****************/
 .small * {
   font-size: small !important;
 }
@@ -54,3 +43,6 @@ code {
   opacity: 0.2;
   z-index: 999;
 }
+
+
+

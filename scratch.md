@@ -1,5 +1,26 @@
 # TDD for Design Scratchpad
 
+# Notes from when I was sleeping
+
+[x] multiple styles sheets? eg standard, jpb, etc.
+[] less me
+[] don't need so much bg
+[] TAT and user testing. It's important but it's not this
+[] set up Atoms vs bits, low cost of changes as new value
+[] sections: Why, Thy, Methodology
+[] Minimum Viable Deliverable => Decisions 
+[x] interlude onology? blog it first
+    - Brad frost "systems not pages = > ontology"
+[] blog fund'l insight: cost is maintaning not buliding design system
+
+---
+  
+[x]  scope thy meth of testing
+
+  
+
+
+
 # ******************* Shower Notes
 
 Where does TDD fit into Think -> Make -> Check
@@ -282,26 +303,6 @@ conclusion
 - put Acknowledger page under screenshotting test
 - report back to Automated Design Test Working Group
 
----
-
-## Goals / Benefits
-
-Automated design testing can address a number of design pains, e.g.:
-
-- Enforce code conventions using linting tools: [idiomatic.js][], [idiomatic-css][]
-- documenting the design of an app at a state in time
-- help make cucumber / feature tests more focused, help devs write them more like a real person and go through the actual workflows. "Cuke it like a human (GH)"
-- safely refactoring horrible CSS: [css-ratiocinator][]
-- help enforce the (live) style guide
-- keep the DOM clean and semantic
-- enforce good stylesheet structure / best practices
-- ensure modules are implemented w/ proper DOM
-- explicitly assert design decisions
-
----
-
-## Risks
-- adding overhead to team flow
 
 ---
 
@@ -320,14 +321,7 @@ Automated design testing can address a number of design pains, e.g.:
 
 ---
 
-## TODO
-- send Github image diffing to Interesting
 
-
-
----
-
----
 
 <!-- not sure where this goes ; do we need to talk about storywriting? maybe storymapping?-->
 # I.N.V.E.S.T.
@@ -338,6 +332,31 @@ Automated design testing can address a number of design pains, e.g.:
 - Estimatable: in theory, yes
 - Small: maybe?
 - Testable: working on that now
+
+---
+
+# What can Automated Testing bring to Design? [blog draft]
+
+## Tools that're out there
+- rspec-style assertion tools (e.g. cactus)
+- image-diff tools (e.g. green_onion, wraith)
+
+## Problems we need to solve
+### Stylesheets grow into a mess
+- I want to refactor this CSS, but I'm scared of introducing regressions
+- I want to enforce code-style in my stylesheets (e.g. compel semantic DOM classes, i.e., use `@extends` in bootstrap)
+- fail a test if `!important`
+
+### Design Integrity
+- are we on-grid?
+- are we staying in our type system? lint
+
+## Narrative integrity
+- do our personas match our cuke suite?
+
+## What should I build?
+- which UI solution is better? (e.g. split-test UI; ethn.io)
+- validating metrics: should I build this feature? Which feature should I build next? Did this feature help users?
 
 ---
 

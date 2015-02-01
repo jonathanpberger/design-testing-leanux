@@ -144,32 +144,4 @@ code {
   padding-top: 1em;
 }
 
-/******************* JPB styling classes  */
 
-.green {
-  color: #859900;
-}
-
-.red {
-  color: #dc322f;
-}
-
-.em {
-  font-size: 2em;
-  display: block;
-}
-
-.interlude {
-  background: #272822;
-  color: #777872;
-  text-shadow: 0 0 20px #333;
-}
-.interlude h1, 
-.interlude h2 {
-  color: #f3f3f3;
-  line-height: 0.8em;
-}
-
-.small-image img{
-  width: 40%;
-}

@@ -360,6 +360,41 @@ conclusion
 
 ---
 
+# Remark.js Layout Test
+
+
+## A - no layout
+
+---
+layout: true
+
+## B - Layout True
+
+---
+
+## C - no layout
+
+---
+
+## D - no layout
+
+---
+layout: false
+
+## E - Layout false
+
+---
+
+## F no layout
+
+---
+
+
+
+
+
+---
+
 # Resources
 [capybara-accessible]: https://github.com/Casecommons/capybara-accessible
 [css-ratiocinator]: https://github.com/begriffs/css-ratiocinator

@@ -13,23 +13,27 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
-.remark-slide-content > h1 {
-  font-size: 3em;
-  color: #333;
-  line-height: 0.8em;
+h1 {
   text-transform: uppercase;
 }
 
-.remark-slide-content > h2 {
+/* .remark-slide-content > h1 { */
+  /* font-size: 3em; */
+  /* color: #333; */
+  /* line-height: 0.8em; */
+  /* text-transform: uppercase; */
+/* } */
 
-  font-size: 2em;
-  color: #666;
-}
+/* .remark-slide-content > h2 { */
 
-.remark-slide-content > h3 {
-  font-size: 0.8em;
-  color: #999;
-}
+  /* font-size: 2em; */
+  /* color: #666; */
+/* } */
+
+/* .remark-slide-content > h3 { */
+  /* font-size: 0.8em; */
+  /* color: #999; */
+/* } */
 
 .remark-code,
 .remark-inline-code { 

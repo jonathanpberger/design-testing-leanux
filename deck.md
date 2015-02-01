@@ -4,7 +4,7 @@ class: center middle
 
 ---
 
-# Towards a Theory of Test-Driven Design
+# Towards a Theory and Methodolofy of Test-Driven Design
 Jonathan Berger, 2015
 
 Mobile Central Europe, Warsaw

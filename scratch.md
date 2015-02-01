@@ -188,6 +188,84 @@ more than just pretty pictures
 
 ---
 
+# From researching rhetoric
+
+who: hi, I'm jon
+origin story
+  designer
+  discovered agile
+  want to bring it to design
+  
+what: agile
+  what problems does it solve?
+  how does it work?
+  
+what: agile problems
+  sus'l pace
+  better work
+  focus on the right things
+  
+how?
+  in dev:
+    Pairing
+    TDD
+    CI
+
+what's the design analogue?
+  Pairing: working on it
+  TDD: this talk!
+  CI: this talk?!
+
+--
+
+who: back to my story
+  came to Piv
+
+what
+  learned dev, PM
+  
+how does that work?
+  TDD hamazon story
+
+--
+
+who: designers 
+what: solve agile problems
+how: break it down into the design pyramid    
+  
+conclusion
+
+--
+
+
+- intro, put up tree
+- throw rocks
+- get down
+
+-- 
+
+- pick an idea you know something about
+- connect a bit of own story to the subject
+- make passion and story universal
+- start w/ universal, then move to my story
+- how can we join together to combat the problem?
+
+--
+
+## 1. tell a story
+
+
+
+## 2. create emotionally charged events
+
+
+
+## 3. what can they do?
+
+
+
+---
+
 
 # From TDD Lunch Talk
 

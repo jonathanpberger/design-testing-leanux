@@ -4,7 +4,7 @@ class: center middle
 
 ---
 
-# Towards a Theory and Methodolofy of Test-Driven Design
+# Towards a Theory and Methodology of Test-Driven Design
 Jonathan Berger, 2015
 
 Mobile Central Europe, Warsaw
@@ -19,38 +19,114 @@ Mobile Central Europe, Warsaw
 - interested in agile practice for design
 
 ---
-name: who-are-you
 
 ## Who are you?
 Show of hands:
 
 --
+
 - Designer?
 
 --
+
 - Developer?
 
--- 
+--
+
 - What else?
 
 ---
 
 ## What it says on the tin
 
-> Years ago, Developers had problems and devised Agile techniques to address them. Today, Desingers face similar problems. Can we adopt similar techniques? In this talk, we’ll explore what automated testing might look like for design. What would it look like to have a more defined definition of “done” for design? What if designers could refactor with impunity? We’ll explore testing possibilities for Visual design, User Experience design, and front-end engineering, and try to build a testing pyramid for design.
+> Years ago, Developers had problems and devised Agile techniques to address them. Today, Designers face similar problems. Can we adopt similar techniques? In this talk, we’ll explore what automated testing might look like for design. What would it look like to have a more defined definition of “done” for design? What if designers could refactor with impunity? We’ll explore testing possibilities for Visual design, User Experience design, and front-end engineering, and try to build a testing pyramid for design.
 
 ---
 
 # The Plan
-- foo
-- bar
-- baz
+- Intro
+- Theory of TDDesign
+- Methodology of TDDesign
+- Outro
 
 ---
+
 class: center, middle, inverse
-# Problems
+# Intro
 
 ---
+
+
+## Developers had problems
+
+--
+## Shorter [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+
+.left-column-equal[
+
+### Things that hurt:
+
+- Changing requirements
+- Seagull management
+- Low-fidelity (or lack of) communication
+- Doing unnecessary work
+- Infrequent delivery
+- Sclerotic process
+- Unsustainable pace
+
+]
+
+.right-column-equal[
+
+### The Result:
+- Time is wasted on distractions
+- Motivation wanes
+- High cost of change is bad for business
+- Customers aren't satisfied
+]
+
+---
+
+# Solution: The [Agile Manifesto](http://www.agilemanifesto.org/)
+
+> 
+- *Individuals and interactions* over processes and tools
+- *Working software* over comprehensive documentation
+- *Customer collaboration* over contract negotiation
+- *Responding to change* over following a plan
+
+> 
+.small[That is, while there is value in the items on
+the right, we value the items on the left more.]
+
+---
+layout: true
+# What does that mean in practice?
+
+---
+
+## Always
+- Outside-In
+- Lower the cost of change
+- shrink feedback loops
+
+---
+
+## Every Week
+- Standups
+- Retros
+- IPMs => storywriting
+- release planning => Big Design Refactor
+
+---
+
+## Every Day
+- Pairing
+- TDD
+- CI
+
+---
+layout: false
 
 ## Designers have Problems
 
@@ -59,16 +135,6 @@ class: center, middle, inverse
 - Who's had to refactor a mess of CSS?
 - Who's had unintended design changes (especially in responsive designs) lead to regressions?
 - Who's had trouble defining "done" for a design problem?
-
----
-
-## Developers had similar problems
-
---
-
-and so devised
-.em[automated testing techniques]
-to protect their work.
 
 ---
 

@@ -70,11 +70,6 @@ Sclerosis hurts.
 - High cost of change is bad for business
 - Customers aren't satisfied
 
-
-
-
-
-
 ---
 
 # Notes from when I was sleeping
@@ -93,10 +88,6 @@ Sclerosis hurts.
 ---
   
 [x]  scope thy meth of testing
-
-  
-
-
 
 # ******************* Shower Notes
 

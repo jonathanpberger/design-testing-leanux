@@ -64,8 +64,8 @@ name: problems
 
 ---
 
-.small[
-## Shorter [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+.smaller[
+## (Shorter) [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 ]
 
 .left-column-equal[

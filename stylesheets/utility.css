@@ -2,6 +2,9 @@
 .small * {
   font-size: small !important;
 }
+.smaller * {
+  font-size: smaller !important;
+}
 code {
   border-radius: 5px;
 }

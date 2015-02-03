@@ -37,35 +37,97 @@ Show of hands:
 
 ---
 
+
 ## What it says on the tin
 
 > Years ago, Developers had problems and devised Agile techniques to address them. Today, Designers face similar problems. Can we adopt similar techniques? In this talk, we’ll explore what automated testing might look like for design. What would it look like to have a more defined definition of “done” for design? What if designers could refactor with impunity? We’ll explore testing possibilities for Visual design, User Experience design, and front-end engineering, and try to build a testing pyramid for design.
 
 ---
 
+class: center, middle
+
+# WARNING: "Testing" is a messy word.
+
+???
+
+- In the design context, it usually means User Testing
+- User Testing is a part of this, but we're talking about a lot more
+
+
+---
+
+# Hypotheses:
+
+- Designers can learn from Agile Development
+- It won't be an exact 1:1 mapping, so we have to adapt
+- Tooling and practice (TDD and CI) is currently the biggest boulder in the road
+
+---
+
+# Goal of this Talk
+- Suggest the possibilities of TDD for design
+- Spread the word about the tools out there
+- Make the case that we need more than automated tools: we need a theory and plan
+
+---
+
 # The Plan
-- Intro: Why TDD?
-- Theory of TDDesign
-- Methodology of TDDesign
-- Outro: What Next?
+- Agile and Design
+- Theory of TDDesign: Why is it Useful?
+- Methodology of TDDesign: How might it be done?
+- What can you do?
 
 ---
 
 class: center, middle, inverse
-# Intro: Why TDD?
+# Agile and Design
 
 ---
 class: center, middle
 name: problems
-# Developers had problems
+## Developers had problems
 
 ---
-## (Shorter) [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+### Agile Manifesto Principles
+--
+
+> - Our highest priority is to *satisfy the customer* through early and continuous delivery of valuable software.
+--
+
+- *Welcome changing requirements*, even late in development. Agile processes harness change for the customer's competitive advantage.
+--
+
+- *Deliver working software frequently*, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+--
+
+- Business people and developers must *work together daily* throughout the project.
+--
+
+- Build projects around motivated individuals. Give them the environment and support they need, and *trust them* to get the job done.
+- The most efficient and effective method of conveying information to and within a development team is *face-to-face conversation*.
+--
+
+- *Working software* is the primary measure of progress.
+- Agile processes promote *sustainable development*. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+- Continuous attention to *technical excellence* and good design enhances agility.
+--
+
+- *Simplicity*--the art of maximizing the amount of work not done--is essential.
+- The best architectures, requirements, and designs emerge from *self-organizing teams*.
+- At regular intervals, *the team reflects* on how to become more effective, then tunes and adjusts its behavior accordingly.
+
+---
+
+(Shorter) 
+
+###[Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 
 ---
 
 .smaller[
-## (Shorter) [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+(Shorter) 
+
+### [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 ]
 
 .left-column-equal[
@@ -80,6 +142,32 @@ name: problems
 - Sclerotic process
 - Unsustainable pace
 
+]
+
+--
+
+.right-column-equal[
+### What "hurt" looks like:
+
+- Backlog churn
+- Changing requirements after the work is done
+- Not knowing what to build
+- Building the wrong thing
+- Monthly or Quarterly releases
+- broken process
+- late nights, weekends
+
+]
+
+---
+
+.smaller[
+(Shorter) 
+
+### [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+]
+
+.left-column-equal[
 ### The Result:
 - Time is wasted on distractions
 - Motivation wanes
@@ -92,17 +180,7 @@ name: problems
 
 .right-column-equal[
 
-### What "hurt" looks like:
-
-- Backlog churn
-- Changing requirements after the work is done
-- Not knowing what to build
-- Building the wrong thing
-- Monthly or Quarterly releases
-- broken process
-- late nights, weekends
-
-### What the Results look like:
+### What Results look like:
 - Business asking "What are they doing?!"
 - Developers are bored and upset
 - Software is unresponsive to business needs
@@ -112,7 +190,13 @@ name: problems
 
 ---
 
-# Solution: The [Agile Manifesto](http://www.agilemanifesto.org/)
+class: center, middle, inverse
+
+## SPOILER: Designers have many of the same problems today!
+
+---
+
+## Developers' Solution: The [Agile Manifesto](http://www.agilemanifesto.org/)
 
 > 
 - *Individuals and interactions* over processes and tools
@@ -126,18 +210,18 @@ the right, we value the items on the left more.]
 
 ---
 layout: true
-# What does that mean in practice?
+## What does Agile mean in practice?
 
 ---
 
-## Always
-- Outside-In
-- Lower the cost of change
-- shrink feedback loops
+### Continuously
+- Outside-In Development
+- Optimize for Low Cost Of Change
+- Optimize for tight feedback loops
 
 ---
 
-## Every Week
+### Weekly Cadence
 - Standups
 - Retros
 - IPMs => storywriting
@@ -145,7 +229,7 @@ layout: true
 
 ---
 
-## Every Day
+### Daily Cadence
 - Pairing
 - TDD
 - CI
@@ -153,19 +237,46 @@ layout: true
 ---
 layout: false
 class: center, middle
-# Designers have Problems
+## Designers have Problems
 
 --
 
-- Who's had to refactor a mess of CSS?
-- Who's had unintended design changes (especially in responsive designs) lead to regressions?
-- Who's had trouble defining "done" for a design problem?
+1. Brittle styles at the implementation layer (CSS)
+2. Unintended design regressions (especially in cross-browser or responsive contexts)
+3. trouble abstracting design decisions from design spandrels/affordances
+4. Trouble defining "done" for a design
+
+<!-- TODO: this is the core; link it up to the current work being done and what's missing
+
+1. Brittle CSS could be linting
+2. Regression-proofing could be wraith
+3. Asserting decisions could be cactus
+4. Defining done could be the missing bit. Automation? CI?
+
+or, more abstractly, the problems are:
+
+1. consistency
+    + code (addressed by linting)
+    + elements (addressed by style guides)
+
+2. unintended regressions - FE
+    + this is fundamentally slippage between asserting design and implementing design
+
+3. ontological design - UI, VxD
+    - in different contexts
+        + cross-browser
+        + responsive
+        + 
+4. asking the right question - Product Design
+
+ -->
 
 ---
 
+<!-- EDIT: Not sure I need this -->
 
-.small[
-## The same things hurt Designers!
+.smaller[
+### The same things hurt Designers!
 ]
 
 .left-column-equal[
@@ -179,17 +290,11 @@ class: center, middle
 - Infrequent delivery
 - Sclerotic process
 - Unsustainable pace
-
-### The Result:
-- Time is wasted on distractions
-- Motivation wanes
-- High cost of change is bad for business
-- Customers aren't satisfied
-
 ]
 
-.right-column-equal[
+--
 
+.right-column-equal[
 ### What "hurt" looks like for designers:
 
 - Backlog churn
@@ -200,7 +305,25 @@ class: center, middle
 - broken process
 - late nights, weekends
 
-### What the Results look like:
+]
+
+---
+
+.left-column-equal[
+
+### The Result:
+- Time is wasted on distractions
+- Motivation wanes
+- High cost of change is bad for business
+- Customers aren't satisfied
+
+]
+
+--
+
+.right-column-equal[
+
+### What Results look like:
 - Business asking "What are they doing?!"
 - Designers are bored and upset
 - Design is unresponsive to business needs
@@ -211,53 +334,85 @@ class: center, middle
 ---
 
 layout: true
-# What *Might* that mean in practice?
+.left-column[
+## What Could Agile Design mean in practice?
+]
 
 ---
 
-## Always
-- √ Outside-In => User-Centered Design
-- √ Lower the cost of change => Design systems, not pages
-- √ shrink feedback loops => Regularly talk to users
+--
 
----
+.right-column[
+### Continuously
+- √ Outside-In Development => User-Centered Design
+- √ Optimize for Low Cost of Change => Design systems, not pages ([Atomic Design][])
+- √ Optimize for Tight Feedback Loops => Research, User Testing
+]
 
-## Every Week
+--
+
+.right-column[
+### Weekly Cadence
 - √ Standups: doing it!
 - √ Retros: doing it!
 - √ IPMs => storywriting
 - √ release planning => Big Design Refactor
+]
 
----
+--
 
-## Every Day
+.right-column[
+### Daily Cadence
 - √ Pairing: doing it!
 - TDD: this talk
-- CI: 
+- CI: next talk
+]
 
 ---
 layout: true
+
+.left-column[
 ## What might automated testing look like for design?
+]
 
 ---
 
-## Lots of people are working on this
+--
+
+.right-column[
+### Lots of people are working on this
 - CSSTe.st
+]
 
----
+--
 
-## Tend to be focused on a few approaches
+.right-column[
+### Tend to be focused on a few approaches
+
+1. Brittle styles at the implementation layer (CSS)
+2. Unintended design regressions (especially in cross-browser or responsive contexts)
+3. trouble abstracting design decisions from design spandrels/affordances
+
+
 - testing CSS
-- screenshot diffing
+- screenshot diff'ing
 - linting
+]
+
+
+--
+.right-column[
+## What's missing?
+]
 
 ---
 
 layout: false
-## What's missing?
 
---
+## 4. Trouble defining "done" for a design
 
+
+???
 These are concerned with testing CSS rather than testing *design*.
 
 ---
@@ -278,29 +433,24 @@ What are the benefits of TDD?
 
 ---
 
-# Interlude: ontology
+<!-- # Interlude: ontology
 
 TODO: PUT ONTOLOGY HERE
 
 ---
-# The Solution: TDD for Design
+ -->
 
---
+# Theory of TDDesign
 
-In this talk we'll explore
+---
 
-## possible testing-based solutions
+## How can adapting TDD for Design help?
 
-for
+- Force a conversation about what "done" means *before* starting work
+- bias towards automation ~= bias towards repeatability (aka scientific method)
 
-- Visual design,
-- User Experience design, and
-- front-end engineering,
+<!-- THIS COULD BE A GOOD PLACE FOR MVD or Sus/Obj -->
 
---
-
-and
-## try to build a testing pyramid for design.
 
 <!-- ---
 class: interlude
@@ -335,6 +485,7 @@ So...
 
 # What is TDD?
  -->
+
 ---
 
 layout: true
@@ -524,11 +675,41 @@ class: interlude
 
 ---
 
-# What is Test-Driven Design?
-- benefits
-- technique
+# Methodology of TDDesign
+
+???
+
+How might it be done?
 
 ---
+
+## Tools being experimented with now
+
+### 1. Consistency
+- Code: CSSLint, JSLint, etc.
+- Elements: StyleCop, others
+
+---
+
+### 2. Unintended Regressions
+
+Screenshot diff tools:
+
+- [Wraith][]
+- [Green Onion][]
+- [CSSCritic][]
+- Frozen DOM: Hardy / Ghoststory
+
+
+---
+
+### 3. Ontological Design
+
+- [Atomic Design][]
+- [Cactus][]
+
+---
+
 class: center, middle
 # Pyramid Scheming
 

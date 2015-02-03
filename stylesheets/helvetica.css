@@ -10,4 +10,28 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+body .remark-slide-content h1 {
+	font-size: 4em;
+	line-height: 0.9em;
+	text-transform: uppercase;
+
+}
+
+body .remark-slide-content p,
+body .remark-slide-content li {
+	font-size: 2em;
+	margin: 0 0.2em;
+}
+
+body .remark-slide-content blockquote {
+	padding-left: 2em;
+	border-left: 10px solid #ccc;
+	margin-left: 0;
+}
+body .remark-slide-content blockquote p {
+	font-style: italic;
+	font-family: courier;
+	font-size: 1.5em;
+	
+}
 

@@ -60,7 +60,7 @@ name: problems
 # Developers had problems
 
 ---
-## Shorter [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+## (Shorter) [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 
 ---
 

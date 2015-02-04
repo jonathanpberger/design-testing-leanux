@@ -381,7 +381,16 @@ layout: true
 
 .right-column[
 ### Lots of people are working on this
-- CSSTe.st
+CSSTe.st catalogs a number of techniques for testing CSS:
+
+- Computed Style
+- Frozen DOM
+- House styleguide
+- Image diff
+- Project styleguide
+- Reference browser comparison
+- Syntax checks
+
 ]
 
 --
@@ -417,10 +426,10 @@ These are concerned with testing CSS rather than testing *design*.
 
 ---
 
-that's part of the picture, but not the whole thing
+Automated testing for CSS isn't enough
+without automated testing for Design
 
-
-
+---
 
 
 ???

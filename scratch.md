@@ -507,3 +507,48 @@ Web Consistency Testing (MogoTest)
 Image Diff (CSSCritic)
 Frozen DOM (cssert)
 GhostStory
+
+---
+
+# Interludes
+
+# Interlude: Why Do I Care?
+
+---
+
+class: interlude
+## origin story
+
+---
+
+class: interlude
+## background on this talk: tried to give it before, but wasn't ready
+
+---
+
+class: interlude
+## What is design?
+
+(people ask "did you design that shirt?")
+
+---
+
+class: interlude
+# </EndInterlude>
+
+---
+
+class: interlude
+# <Interlude>: TDD & Pairing
+
+---
+
+class: interlude
+## Ping Pong Pairing
+- How does it work?
+- how would TDD help Design Pairing?
+
+---
+
+class: interlude
+# </End Interlude>

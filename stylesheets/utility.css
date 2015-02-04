@@ -9,14 +9,46 @@ code {
   border-radius: 5px;
 }
 .inverse {
-  background: #272822;
-  color: #777872;
+  background: #222;
+  color: white;
   text-shadow: 0 0 20px #333;
 }
-.inverse h1, .inverse h2 {
+
+.inverse .f1,
+.inverse .f2,
+.inverse h1,
+.inverse h2 {
+  color: white;
+  line-height: 0.8em;
+}
+
+.interlude {
+  background: #222;
+  color: white;
+  text-shadow: 0 0 20px #333;
+}
+
+.interlude .f1, 
+.interlude .f2, 
+.interlude h1, 
+.interlude h2 {
+  color: #white;
+  line-height: 0.8em;
+}
+
+.warning {
+  background: #990000;
+  color: #eee;
+  text-shadow: 0 0 20px #aaa;
+}
+.warning h1,
+.warning h2 {
   color: #f3f3f3;
   line-height: 0.8em;
 }
+
+
+
 .footnote {
   position: absolute;
   font-size: small;

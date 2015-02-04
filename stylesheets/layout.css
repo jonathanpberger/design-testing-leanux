@@ -66,3 +66,25 @@
   width: 50%;
   float: right;
 }
+
+
+/* Three-column layout */
+
+.left-column h2:last-of-type, 
+.left-column h3:last-child {
+  color: #000;
+}
+
+
+.left-third,
+.middle-third {
+  width: 34%;
+  height: 92%;
+  float: left;
+}
+
+.right-third {
+  width: 32%;
+  float: right;
+}
+

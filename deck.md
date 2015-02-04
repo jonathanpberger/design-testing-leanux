@@ -4,7 +4,8 @@ class: center middle
 
 ---
 
-# Towards a Theory and Methodology of Test-Driven Design
+# Towards a Theory & Methodology of Test-Driven Design
+
 Jonathan Berger, 2015
 
 Mobile Central Europe, Warsaw
@@ -13,9 +14,9 @@ Mobile Central Europe, Warsaw
 
 ## Who Am I?
 
-- @jonathanpberger
-- ~30 agile projects since 2008
+- [@jonathanpberger](http://jonathanpberger.com)
 - design, code, pm
+- ~30 agile projects since 2008
 - interested in agile practice for design
 
 ---
@@ -26,15 +27,12 @@ Show of hands:
 --
 
 - Designer?
-
 --
 
 - Developer?
-
 --
 
 - What else?
-
 ---
 
 
@@ -44,202 +42,235 @@ Show of hands:
 
 ---
 
-class: center, middle
+## Hypotheses
 
-# WARNING: "Testing" is a messy word.
+1. Design practice can learn from Agile Development
+--
+
+2. BUT it's not an exact 1:1 mapping
+--
+
+3. The [Next Biggest Boulder][1] in the road: 
+
+**casting emerging tools in the context of a coherant practice.**
+
+---
+
+<!-- 
+# Goal of this Talk
+- Share the state of the art for Design Testing
+- Suggest the possibilities for TDD for design
+- Argue that we need more than tools: we need process
+
+-->
+
+## Agenda
+- Agile and Design and Testing
+- Theory of TDDesign: Why is it Useful?
+- Methodology of TDDesign: How might it be done?
+- Next Steps
+
+---
+
+class: center, middle, warning
+
+## WARNING: "Testing" is a messy word.
 
 ???
 
 - In the design context, it usually means User Testing
 - User Testing is a part of this, but we're talking about a lot more
 
+---
+
+class: center, middle
+
+.f2[Testing &ne; User Testing]
 
 ---
 
-# Hypotheses:
+class: center, middle
 
-- Designers can learn from Agile Development
-- It won't be an exact 1:1 mapping, so we have to adapt
-- Tooling and practice (TDD and CI) is currently the biggest boulder in the road
+.f2[Testing &sup; User Testing]
 
 ---
 
-# Goal of this Talk
-- Suggest the possibilities of TDD for design
-- Spread the word about the tools out there
-- Make the case that we need more than automated tools: we need a theory and plan
+class: center, middle
+
+.f2[Testing &ne; TDD]
 
 ---
 
-# The Plan
-- Agile and Design
-- Theory of TDDesign: Why is it Useful?
-- Methodology of TDDesign: How might it be done?
-- What can you do?
+class: center, middle
+
+.f2[Testing &sup; TDD]
 
 ---
 
 class: center, middle, inverse
-# Agile and Design
+# Agile + Testing + Design
 
 ---
+
+class: center, middle
+.f2[Once upon a time...]
+
+---
+
 class: center, middle
 name: problems
+
 ## Developers had problems
 
 ---
-### Agile Manifesto Principles
---
 
-> - Our highest priority is to *satisfy the customer* through early and continuous delivery of valuable software.
---
+background-image: url(images/principles.png)
 
-- *Welcome changing requirements*, even late in development. Agile processes harness change for the customer's competitive advantage.
---
+---
+class: middle, center
 
-- *Deliver working software frequently*, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
---
-
-- Business people and developers must *work together daily* throughout the project.
---
-
-- Build projects around motivated individuals. Give them the environment and support they need, and *trust them* to get the job done.
-- The most efficient and effective method of conveying information to and within a development team is *face-to-face conversation*.
---
-
-- *Working software* is the primary measure of progress.
-- Agile processes promote *sustainable development*. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
-- Continuous attention to *technical excellence* and good design enhances agility.
---
-
-- *Simplicity*--the art of maximizing the amount of work not done--is essential.
-- The best architectures, requirements, and designs emerge from *self-organizing teams*.
-- At regular intervals, *the team reflects* on how to become more effective, then tunes and adjusts its behavior accordingly.
+## (Shorter) [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
 
 ---
 
-(Shorter) 
+class: center, middle, warning
 
-###[Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
+.f1[Things Hurt!!]
 
 ---
 
-.smaller[
-(Shorter) 
-
-### [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
-]
-
-.left-column-equal[
-
-### Things that hurt:
+### Things that hurt
 
 - Changing requirements
-- Seagull management
-- Low-fidelity (or lack of) communication
+- "Seagull" management
+- Low-fidelity communication
 - Doing unnecessary work
 - Infrequent delivery
-- Sclerotic process
+- Slow-to-evolve process
 - Unsustainable pace
 
-]
+???
 
---
-
-.right-column-equal[
-### What "hurt" looks like:
-
-- Backlog churn
-- Changing requirements after the work is done
-- Not knowing what to build
-- Building the wrong thing
-- Monthly or Quarterly releases
-- broken process
-- late nights, weekends
-
-]
+Through a very scientific process, the list was consolidated
 
 ---
 
-.smaller[
-(Shorter) 
+### Things that hurt
 
-### [Principles Behind the Agile Manifesto](http://www.agilemanifesto.org/principles.html)
-]
+- .de-em[Changing requirements, e.g.] **backlog churn**
+- .de-em["Seagull" management, e.g]. **swoop in, poop all over, fly away**
+- .de-em[Low-fidelity communication, e.g.] **not knowing what to build**
+- .de-em[Doing unnecessary work, e.g.] **building the wrong thing**
+- .de-em[Infrequent delivery, e.g.] **monthly or quarterly or NEVER releases**
+- .de-em[Slow-to-evolve process, e.g.] **broken process**
+- .de-em[Unsustainable pace, e.g.] **late nights, weekends**
 
-.left-column-equal[
-### The Result:
+---
+
+### The Result
 - Time is wasted on distractions
 - Motivation wanes
-- High cost of change is bad for business
+- Cost of change is high
 - Customers aren't satisfied
+
+---
+
+### The Result
+
+- .de-em[Time is wasted on distractions, e.g.] **"What are they doing?!"**
+- .de-em[Motivation wanes, e.g.] **we're bored and upset**
+- .de-em[Cost of change is high, e.g.] **product is unresponsive**
+- .de-em[Customers aren't satisfied, e.g.] **FAILURE AND MISERY!!**
+
+---
+
+class: center, middle, warning
+
+.f1[
+
+SPOILER ALERT!!
 
 ]
 
---
+???
 
-.right-column-equal[
-
-### What Results look like:
-- Business asking "What are they doing?!"
-- Developers are bored and upset
-- Software is unresponsive to business needs
-- Customers aren't satisfied
-
-]
+We've been talking about a 20-year old engineering story, but
 
 ---
 
 class: center, middle, inverse
 
-## SPOILER: Designers have many of the same problems today!
+.f1[
+
+Designers have many of the same problems today
+
+]
+
+???
+
+The response?
 
 ---
 
-## Developers' Solution: The [Agile Manifesto](http://www.agilemanifesto.org/)
-
-> 
-- *Individuals and interactions* over processes and tools
-- *Working software* over comprehensive documentation
-- *Customer collaboration* over contract negotiation
-- *Responding to change* over following a plan
-
-> 
-.small[That is, while there is value in the items on
-the right, we value the items on the left more.]
-
----
-layout: true
-## What does Agile mean in practice?
+background-image: url(images/agile-manifesto.png)
 
 ---
 
-### Continuously
-- Outside-In Development
-- Optimize for Low Cost Of Change
-- Optimize for tight feedback loops
-
----
-
-### Weekly Cadence
-- Standups
-- Retros
-- IPMs => storywriting
-- release planning => Big Design Refactor
-
----
-
-### Daily Cadence
-- Pairing
-- TDD
-- CI
-
----
-layout: false
+name: agile-in-practice
 class: center, middle
-## Designers have Problems
 
---
+.f2[What does "Agile" mean in practice?]
+
+---
+
+## Agile Development in practice
+
+.left-third[
+.f3[Continuously]
+
+optimize for...
+
+- **Outside-In** dev't
+- low **Cost Of Change**
+- tight **feedback loops** with {users, business, product}
+]
+
+.middle-third[
+.f3[Weekly Cadence]
+
+- Retros
+- Iteration Planning
+- Release planning
+
+]
+
+.right-third[
+
+.f3[Daily Cadence]
+
+- Standups
+- Pair Programming
+- Test-Driven Dev't ("TDD")
+- Continuous Integration ("CI")
+
+]
+
+---
+
+background-image: url(images/jay-z.jpg)
+class: center, middle, inverse
+
+.f1[Designers have Problems]
+
+---
+
+class: center, middle
+
+.f1[Can testing help?]
+
+---
+
+.f2[\#DesignProblems]
 
 1. Brittle styles at the implementation layer (CSS)
 2. Unintended design regressions (especially in cross-browser or responsive contexts)
@@ -333,40 +364,48 @@ or, more abstractly, the problems are:
 
 ---
 
-layout: true
-.left-column[
+name: in-practice
 ## What Could Agile Design mean in practice?
-]
 
----
-
---
-
-.right-column[
+.left-third[
 ### Continuously
-- √ Outside-In Development => User-Centered Design
-- √ Optimize for Low Cost of Change => Design systems, not pages ([Atomic Design][])
-- √ Optimize for Tight Feedback Loops => Research, User Testing
+
+- User-Centered Design
+- Design systems, not pages ([Atomic Design][2])
+- Research & User Testing
 ]
 
---
-
-.right-column[
+.middle-third[
 ### Weekly Cadence
-- √ Standups: doing it!
-- √ Retros: doing it!
-- √ IPMs => storywriting
-- √ release planning => Big Design Refactor
+
+- Standups: YES!
+- Retros: YES!!
+- Design stories, backlog
+- [Big Design Refactor][3]
 ]
 
---
-
-.right-column[
+.right-third[
 ### Daily Cadence
-- √ Pairing: doing it!
-- TDD: this talk
-- CI: next talk
+
+- Pairing: YES!
+- **TDD: this talk**
+- **CI: next talk**
 ]
+
+???
+
+design : dev ::
+
+weekly
+
+- User-Centered Design &larr; Outside-In Development
+- Design systems, not pages &larr; Low Cost of Change
+- Tight Feedback Loops &rarr; Research, User Testing
+
+daily
+
+- IPMs &rarr; Storywriting
+- Release Planning &rarr; [Big Design Refactor][3]
 
 ---
 layout: true
@@ -393,7 +432,7 @@ CSSTe.st catalogs a number of techniques for testing CSS:
 
 ]
 
---
+---
 
 .right-column[
 ### Tend to be focused on a few approaches
@@ -461,34 +500,9 @@ TODO: PUT ONTOLOGY HERE
 <!-- THIS COULD BE A GOOD PLACE FOR MVD or Sus/Obj -->
 
 
-<!-- ---
-class: interlude
+<!-- this could be a good place for  Interlude: Why Do I Care? -->
 
-# Interlude: Why Do I Care?
-
----
-
-class: interlude
-## origin story
-
----
-
-class: interlude
-## background on this talk: tried to give it before, but wasn't ready
-
----
-
-class: interlude
-## What is design?
-
-(people ask "did you design that shirt?")
-
----
-
-class: interlude
-# </EndInterlude>
-
----
+<!--
 
 So...
 
@@ -611,7 +625,7 @@ looks a lot like regular English, but with a few magic words:
 - (there is no "Add Item to Cart" button, so that should fail.) 
 
 ---
-# make it green
+## make it green
 - go into the part of the codebase which has front-end HTML views, 
 - find the Item Page, and 
 - add `<button>Add Item to Cart</button>`. 
@@ -658,6 +672,7 @@ Now here's the fun part. Remember how we said we already built the User Login sy
 
 ???
 We'll kick off the full test run, and it'll take a few minutes to run all the tests. Now's a great time to get up, stretch our legs, grab a drink, maybe play a game of ping pong. When we return, the test suite is red! It turns out that when we decremented Warehouse Inventory, we broke part of the warehouse management system that had already been written. Now we'll go fix our code (writing additional tests as necessary) and repeat the process until the test suite is green. Once suite is green, we can push our code to production with confidence that the software will act as expected. In this manner, we mitigate technical risks and let deployment be a purely business decision.
+
 ---
 
 Fix it, run again, go green: Red, Green, Refactor.
@@ -667,28 +682,115 @@ Fix it, run again, go green: Red, Green, Refactor.
 I didn't go into detail here, but the Cuke tests drive out the Unit tests! Colud design testing do the same?
 
 ---
-class: interlude
-# <Interlude>: TDD & Pairing
 
----
-
-class: interlude
-## Ping Pong Pairing
-- How does it work?
-- how would TDD help Design Pairing?
-
----
-
-class: interlude
-# </End Interlude>
-
----
+<!-- this could be a place for# <Interlude>: TDD & Pairing -->
+<!-- this could be a place for# <Interlude>: Ping Pong Pairing -->
 
 # Methodology of TDDesign
 
+## Front-End: TDD Mock-ups
+
+<!-- TODO: need IMG of wraith here -->
+
+---
+
+## Visual Design: BDD Flows
+
+<!-- TODO: need IMG of story=>artboard here 
+
+see also [GV's Story-Centered Design](https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user)
+
+-->
+
+---
+
+## UI: Style Cop
+
+<!-- TODO: need IMG of styleguide, SGDD here -->
+
+---
+
+## UX: Lean Hypotheses, TAT, User Testing
+
+
+---
+
+# CI
+
+Any of these can / should plug into CI
+
+CI => DoD
+
+CI => Automation
+
+CI => health of design
+
+---
+
+class: interlude
+
+# Interlude: The Testing Pyramid
+
 ???
 
-How might it be done?
+- testing has a notion of different kinds of tests
+- if we start separating this out
+
+---
+
+class: center, middle, inverse
+# Pyramid Scheming
+
+???
+
+- test pyramid history: from QA, inverted
+- for our purposes: a model of how different tests fit into the picture
+
+what is it?, what do we usually call it?, how do we usually deliver it?, how could we test it?
+concept / visual language / metaphor (IA?)
+UX / wires
+
+CSS
+expression: final app
+
+---
+
+### Dev 
+|Typical Tool|What are we Testing?|Name|How Many?|
+|-|-|-|-|
+|Cucumber|Happy Path| Acceptance Tests | 1 |
+|Capybara|Intra-system| Integration Tests | 10 |
+|Rspec|Methods| Unit Tests | 100 |
+
+### Design
+
+|Typical Tool|What are we Testing?|Name|How Many?|
+|-|-|-|-|
+|CSSLint|Consistancy | Linting | many |
+|Wraith|Regressions| Screenshot Diff | medium |
+|Rspec|Ontological Integrity| Unit Tests | few |
+
+???
+
+or
+
+UI
+Service
+Unit
+
+---
+
+## Design Testing Pyramid
+
+- traditional user testing
+<!-- todo: bring in list from UX Recipes -->
+
+- Assert Design Decisions (cactus)
+- Control Regressions (green_onion)
+- Safely refactor bloated CSS (CSS Racionator)
+- Enforce Code Conventions (CSS Lint)
+- Enforce personas (persona_dot_yml)
+- Enforce Styleguide-Driven Development (style_cop)
 
 ---
 
@@ -716,52 +818,6 @@ Screenshot diff tools:
 
 - [Atomic Design][]
 - [Cactus][]
-
----
-
-class: center, middle
-# Pyramid Scheming
-
-???
-
-- test pyramid history: from QA, inverted
-- for our purposes: a model of how different tests fit into the picture
-
-what is it?, what do we usually call it?, how do we usually deliver it?, how could we test it?
-concept / visual language / metaphor (IA?)
-UX / wires
-
-CSS
-expression: final app
-
----
-
-## Dev Testing Pyramid
-- 1 ("Functional") Acceptance test
-- 10 Integration tests
-- 100 Unit tests
-
-???
-
-or
-
-UI
-Service
-Unit
-
----
-
-## Design Testing Pyramid
-
-- traditional user testing
-<!-- todo: bring in list from UX Recipes -->
-
-- Assert Design Decisions (cactus)
-- Control Regressions (green_onion)
-- Safely refactor bloated CSS (CSS Racionator)
-- Enforce Code Conventions (CSS Lint)
-- Enforce personas (persona_dot_yml)
-- Enforce Styleguide-Driven Development (style_cop)
 
 
 ---
@@ -799,3 +855,6 @@ we can start w/ something trivial, and add to it as we learn
 
 ---
 
+[1]: https://twitter.com/jonathanpberger/status/562926708949803010
+[2]: http://bradfrost.com/blog/post/atomic-web-design/
+[3]: http://pivotallabs.com/big-design-refactor

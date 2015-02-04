@@ -44,8 +44,8 @@
   float: left;
 }
 
-.left-column-equal h2:last-of-type, 
-.left-column-equal h3:last-child, 
+.left-half h2:last-of-type, 
+.left-half h3:last-child, 
 .left-column h2:last-of-type, 
 .left-column h3:last-child {
   color: #000;
@@ -70,6 +70,8 @@
 
 /* Three-column layout */
 
+.left-half h2:last-of-type, 
+.left-half h3:last-child, 
 .left-column h2:last-of-type, 
 .left-column h3:last-child {
   color: #000;

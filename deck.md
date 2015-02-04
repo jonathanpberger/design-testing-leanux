@@ -310,7 +310,7 @@ or, more abstractly, the problems are:
 ### The same things hurt Designers!
 ]
 
-.left-column-equal[
+.left-half[
 
 ### Things that hurt:
 
@@ -325,7 +325,7 @@ or, more abstractly, the problems are:
 
 --
 
-.right-column-equal[
+.right-half[
 ### What "hurt" looks like for designers:
 
 - Backlog churn
@@ -340,7 +340,7 @@ or, more abstractly, the problems are:
 
 ---
 
-.left-column-equal[
+.left-half[
 
 ### The Result:
 - Time is wasted on distractions
@@ -352,7 +352,7 @@ or, more abstractly, the problems are:
 
 --
 
-.right-column-equal[
+.right-half[
 
 ### What Results look like:
 - Business asking "What are they doing?!"

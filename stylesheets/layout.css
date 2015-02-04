@@ -56,13 +56,13 @@
   float: right;
 }
 
-.left-column-equal {
+.left-half {
   width: 50%;
   height: 92%;
   float: left;
 }
 
-.right-column-equal {
+.right-half {
   width: 50%;
   float: right;
 }

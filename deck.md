@@ -50,7 +50,7 @@ Show of hands:
 2. BUT it's not an exact 1:1 mapping
 --
 
-3. The [Next Biggest Boulder][1] in the road: 
+3. The [Next Biggest Boulder][boulder] in the road: 
 
 **casting emerging tools in the context of a coherant practice.**
 
@@ -266,16 +266,20 @@ class: center, middle, inverse
 
 class: center, middle
 
-.f1[Can testing help?]
+.f1[How can testing help?]
 
 ---
 
 .f2[\#DesignProblems]
 
-1. Brittle styles at the implementation layer (CSS)
-2. Unintended design regressions (especially in cross-browser or responsive contexts)
-3. trouble abstracting design decisions from design spandrels/affordances
-4. Trouble defining "done" for a design
+- Brittle styles .de-em[at the implementation (e.g. CSS) layer]
+- Unintended design regressions .de-em[(especially in cross-browser or responsive contexts)]
+- Trouble abstracting design decisions .de-em[from affordances and spandrals; i.e., Cargo Culting Design]
+- Trouble defining "done" .de-em[for a design]
+
+???
+
+USING A HASHTAG!!
 
 <!-- TODO: this is the core; link it up to the current work being done and what's missing
 
@@ -371,7 +375,7 @@ name: in-practice
 ### Continuously
 
 - User-Centered Design
-- Design systems, not pages ([Atomic Design][2])
+- Design systems, not pages ([Atomic Design][atomic])
 - Research & User Testing
 ]
 
@@ -381,7 +385,7 @@ name: in-practice
 - Standups: YES!
 - Retros: YES!!
 - Design stories, backlog
-- [Big Design Refactor][3]
+- [Big Design Refactor][bdr]
 ]
 
 .right-third[
@@ -755,79 +759,56 @@ expression: final app
 
 ---
 
-### Dev 
-|Typical Tool|What are we Testing?|Name|How Many?|
-|-|-|-|-|
-|Cucumber|Happy Path| Acceptance Tests | 1 |
-|Capybara|Intra-system| Integration Tests | 10 |
-|Rspec|Methods| Unit Tests | 100 |
+name:dev-pyramid
 
-### Design
-
-|Typical Tool|What are we Testing?|Name|How Many?|
-|-|-|-|-|
-|CSSLint|Consistancy | Linting | many |
-|Wraith|Regressions| Screenshot Diff | medium |
-|Rspec|Ontological Integrity| Unit Tests | few |
-
-???
-
-or
-
-UI
-Service
-Unit
+### Development Testing Pyramid 
+|Strategy Name    |Typical Tool|Testing What?|How Many?|
+|-----------------|------------|-------------|---------|
+|Acceptance Tests |Cucumber    |Happy Path   | 1       |
+|Integration Tests|Capybara    |Intra-system | 10      |
+|Unit Tests       |Rspec       |Methods      | 100     |
 
 ---
 
-## Design Testing Pyramid
+name:design-pyramid
 
-- traditional user testing
-<!-- todo: bring in list from UX Recipes -->
+### Design Testing Pyramid
 
-- Assert Design Decisions (cactus)
-- Control Regressions (green_onion)
-- Safely refactor bloated CSS (CSS Racionator)
-- Enforce Code Conventions (CSS Lint)
-- Enforce personas (persona_dot_yml)
-- Enforce Styleguide-Driven Development (style_cop)
+| Type   | Strategy Name                | Possible Tool                  | Testing What?            | For every&hellip; | Order of Magnitude |
+| -----  | ---------------------------- | ------------------------------ | ------------------------ | ----------------- | -----              |
+| UX     | Test Testing                 | [Persona.yml][yml]             | Persona/TDD Integrity    | Persona           | •                  |
+| UX     | User Research                | [Ethn.io][ethnio]              | Product-market fit       | Persona           | ••                 |
+| FE     | Cross-Viewport Testing       | [Browserstack][browserstack]   | Responsive Consistency   | Viewport          | ••                 |
+| FE     | Screenshot Diff'ing          | [Wraith][wraith]               | Styleguide Compliance    | Component         | ••                 |
+| VxD    | Computed Style Unit Testing  | [Hardy][hardy]                 | Ontological Integrity    | Decision          | ••                 |
+| VxD    | CSS Unit Testing             | [Quixote][q]                   | Ontological Integrity    | Decision          | ••                 |
+| UI,VxD | Styleguide-Driven Dev't      | [Stylecop][stylecop]           | Ontological Integrity    | Decision          | ••                 |
+| UI     | Usability Testing            | [Usertesting][usertesting]     | Usability                | Interaction       | ••                 |
+| FE     | Cross-Browser Testing        | [Browsershots][browsershots]   | X-browser Consistency    | Browser           | •••                |
+| ALL    | BDR Testing                  | **[BUILD THIS!][red-ci]**      | Defining 'Done'          | Story             | •••                |
+| FE     | Screenshot Diff'ing          | [Wraith][wraith]               | Screen Regressions       | Screen            | •••                |
+| FE     | Linting                      | [CSSLint][csslint]             | Code Consistency         | Line              | •••                |
 
----
-
-## Tools being experimented with now
-
-### 1. Consistency
-- Code: CSSLint, JSLint, etc.
-- Elements: StyleCop, others
-
----
-
-### 2. Unintended Regressions
-
-Screenshot diff tools:
-
-- [Wraith][]
-- [Green Onion][]
-- [CSSCritic][]
-- Frozen DOM: Hardy / Ghoststory
-
+<!-- |UI   | Live Styleguide            |[Hologram][hologram]          |Ontological Integrity   | Every Decision   | ••  |
+ -->
 
 ---
 
-### 3. Ontological Design
-
-- [Atomic Design][]
-- [Cactus][]
-
-
----
-
-# Automation is important
+# Automation is crucial
 
 ???
 
 It lets us build CI
 we can start w/ something trivial, and add to it as we learn
+
+---
+name:fixtures
+
+## A word about Fixtures
+
+- Content changes make many of these techniques are brittle
+- TDD has addressed this with Fixtures
+- Some work on Design [Fixtures][fixtures] can help a *lot*
 
 ---
 
@@ -844,7 +825,6 @@ we can start w/ something trivial, and add to it as we learn
 - Gherkin-driven mockups
 - style-guide driven design
 
-
 ---
 
 # Thanks!
@@ -855,6 +835,21 @@ we can start w/ something trivial, and add to it as we learn
 
 ---
 
-[1]: https://twitter.com/jonathanpberger/status/562926708949803010
-[2]: http://bradfrost.com/blog/post/atomic-web-design/
-[3]: http://pivotallabs.com/big-design-refactor
+[boulder]: https://twitter.com/jonathanpberger/status/562926708949803010
+[atomic]: http://bradfrost.com/blog/post/atomic-web-design/
+[bdr]: http://pivotallabs.com/big-design-refactor
+[fixtures]:http://en.wikipedia.org/wiki/Test_fixture
+[csscritic]:http://cburgmer.github.io/csscritic/
+[phantomcss]: https://github.com/Huddle/PhantomCSS
+[hologram]: http://trulia.github.io/hologram/
+[browsershots]:http://browsershots.org/
+[usertesting]:http://www.usertesting.com/
+[ethnio]: http://ethn.io/
+[browserstack]: http://browserstack.com
+[yml]:https://github.com/jonathanpberger/persona_dot_yml
+[stylecop]: https://github.com/pivotal/style_cop
+[wraith]: https://github.com/BBC-News/wraith
+[csslint]:https://github.com/CSSLint/csslint
+[hardy]:http://hardy.io/
+[q]:https://github.com/jamesshore/quixote
+[red-ci]: https://twitter.com/jonathanpberger/status/563123069435535361

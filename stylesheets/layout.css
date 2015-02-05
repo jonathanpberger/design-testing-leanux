@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,400,900);
 .remark-slide-footer {
   font-family: "Lato", sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   position: absolute;
   bottom: 0;
   background-color: #222;
@@ -90,3 +90,13 @@
   float: right;
 }
 
+#slide-dev-pyramid table {
+  border-spacing: 3em 0;
+}
+
+#slide-design-pyramid table {
+  border-spacing: 0.4em 0.1em;
+}
+th {
+  text-align: left;
+}

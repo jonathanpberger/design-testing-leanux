@@ -93,3 +93,11 @@ code {
   opacity: 0.5;
 }
 
+.no-repeat {
+  background-repeat: no-repeat;
+}
+
+.greenbg{
+  background-color: #859900;
+  color: white;
+}

@@ -346,9 +346,9 @@ class: center, middle, inverse
 ## History of TDD
 
 - Waterfall: devs write features, then QA writes tests
-- TDD "rediscovered" by Kent Beck
 - [Extreme Programming Explained][xp-explained], (2000)
 - Agile: write tests first, then features
+- TDD "rediscovered" by Kent Beck
 - Mainframe era (1950s)
 
 ???
@@ -455,7 +455,7 @@ class: center, middle, inverse
 
 .f3[What next?]
 
-- connect the `<button>`to the database
+- connect the `<button>` to the database
 - `Cart Inventory` should increment
 - run the test again 
   
@@ -471,7 +471,7 @@ layout:true
 
 ---
 
-.red[`Then I should see the Cart Inventory increment`]
+.green[`Then I should see the Cart Inventory increment`]
 
 ---
 
@@ -682,7 +682,7 @@ class: center, middle
 
 ???
 
-- we looked at a few design testing tools earlier
+- we looked at Automated design testing tools earlier
 - can we test-DRIVE with them?
 
 ---
@@ -696,7 +696,7 @@ class: center, middle
 - Red Test: Mockup vs. Screenshot of implementation
 - Green Test: Image diff passes
 
-Worth it? Maybe for responsive or X-browser?
+Worth it? Maybe for responsive or X-browser? Style-Guide Driven Design?
 
 ???
 
@@ -754,7 +754,9 @@ see also Google Ventures' [Story-Centered Design][scd]
 
 ---
 
-### UI: Style Guides & Style Cop
+### UI: Live Style Guides & Compliance
+
+Style-Guide-Driven Design, Style Cop
 
 ![](images/patternlab.io.png)
 
@@ -766,17 +768,15 @@ see also Google Ventures' [Story-Centered Design][scd]
 ---
 
 ### UX
-- Lean Hypotheses
 - Persona.yml
-- Think-aloud Thursday
 - UserTesting.com, Ethn.io
+- Lean Hypotheses
 
 ???
 
-- Hypotheses set up acceptance crit
 - Persona.yml makes personae AC
 - UserTesting.com, Ethn.io could be ways to automate via machine
-- Think-aloud Thursday is automation via practice
+- Hypotheses set up acceptance crit
 
 
 ---
@@ -894,6 +894,7 @@ name: resources
 | Story-Centered Design     | <https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user>|
 | Style Guides              | <http://styleguides.io/>                                                         |
 | Style-Guide Driven Design | <http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide> |
+| Towards a Theory & Methodology of Test-Driven Design | <http://jonathanpberger.com/talks> |
 
 [boulder]: https://twitter.com/jonathanpberger/status/562926708949803010
 [atomic]: http://bradfrost.com/blog/post/atomic-web-design/

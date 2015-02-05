@@ -615,3 +615,49 @@ layout: true
 
 - At regular intervals, *the team reflects* on how to become more effective, then tunes and adjusts its behavior accordingly.
 
+---
+
+# core areas where TDDesign can help
+
+link it up to the current work being done and what's missing
+
+1. Brittle CSS could be linting
+2. Regression-proofing could be wraith
+3. Asserting decisions could be cactus
+4. Defining done could be the missing bit. Automation? CI?
+
+or, more abstractly, the problems are:
+
+1. consistency
+    + code (addressed by linting)
+    + elements (addressed by style guides)
+
+2. unintended regressions - FE
+    + this is fundamentally slippage between asserting design and implementing design
+
+3. ontological design - UI, VxD
+    - in different contexts
+        + cross-browser
+        + responsive
+        + 
+4. asking the right question - Product Design
+
+---
+
+# Late Night TODOs
+
+~:700 - fix methodology section
+
+- run-through
+
+---
+
+# TDDesign
+  - [] 2 possible lessons:
+  1. literal: BDD Screenshot design
+  2. Automation! DoD!
+
+  - [] use "benefits". May need to expand / refactor to build on previous (initial) mention of benefits.
+
+- [] all interludes can be in Bonus section
+- [√] might need to cover multiple types of testing when I talk about TDD in the first place; set up the testing pyramid

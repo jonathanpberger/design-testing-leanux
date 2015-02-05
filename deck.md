@@ -50,9 +50,7 @@ Show of hands:
 2. BUT it's not an exact 1:1 mapping
 --
 
-3. The [Next Biggest Boulder][boulder] in the road: 
-
-**casting emerging tools in the context of a coherant practice.**
+3. The [Next Biggest Boulder][boulder] in the road: **casting emerging tools in the context of a coherant practice.**
 
 ---
 
@@ -118,7 +116,7 @@ class: center, middle
 ---
 
 class: center, middle
-name: problems
+name: developer-problems
 
 ## Developers had problems
 
@@ -202,16 +200,20 @@ class: center, middle, inverse
 
 .f1[
 
-Designers have many of the same problems today
+Designers have many of the same problems today!!
 
 ]
 
+---
+class: center, middle
+.f2[(back to developers)]
+
 ???
 
-The response?
+the devs' response?
 
 ---
-
+name: agile-manifesto
 background-image: url(images/agile-manifesto.png)
 
 ---
@@ -270,7 +272,7 @@ class: center, middle
 
 ---
 
-.f2[\#DesignProblems]
+## \#DesignProblems
 
 - Brittle styles .de-em[at the implementation (e.g. CSS) layer]
 - Unintended design regressions .de-em[(especially in cross-browser or responsive contexts)]
@@ -281,90 +283,26 @@ class: center, middle
 
 USING A HASHTAG!!
 
-<!-- TODO: this is the core; link it up to the current work being done and what's missing
+---
 
-1. Brittle CSS could be linting
-2. Regression-proofing could be wraith
-3. Asserting decisions could be cactus
-4. Defining done could be the missing bit. Automation? CI?
+### Designers hurt too
 
-or, more abstractly, the problems are:
-
-1. consistency
-    + code (addressed by linting)
-    + elements (addressed by style guides)
-
-2. unintended regressions - FE
-    + this is fundamentally slippage between asserting design and implementing design
-
-3. ontological design - UI, VxD
-    - in different contexts
-        + cross-browser
-        + responsive
-        + 
-4. asking the right question - Product Design
-
- -->
+- .de-em[Changing requirements, e.g.] **backlog churn**
+- .de-em["Seagull" management, e.g]. **swoop in, poop all over, fly away**
+- .de-em[Low-fidelity communication, e.g.] **not knowing what to .green[design]**
+- .de-em[Doing unnecessary work, e.g.] **.green[designing] the wrong thing**
+- .de-em[Infrequent delivery, e.g.] **monthly or quarterly or NEVER releases**
+- .de-em[Slow-to-evolve process, e.g.] **broken process**
+- .de-em[Unsustainable pace, e.g.] **late nights, weekends**
 
 ---
 
-<!-- EDIT: Not sure I need this -->
+### Designers see similar results
 
-.smaller[
-### The same things hurt Designers!
-]
-
-.left-half[
-
-### Things that hurt:
-
-- Changing requirements
-- Seagull management
-- Low-fidelity (or lack of) communication
-- Doing unnecessary work
-- Infrequent delivery
-- Sclerotic process
-- Unsustainable pace
-]
-
---
-
-.right-half[
-### What "hurt" looks like for designers:
-
-- Backlog churn
-- Changing requirements after the work is done
-- Not knowing what to design
-- Designing the wrong thing
-- Monthly or Quarterly releases
-- broken process
-- late nights, weekends
-
-]
-
----
-
-.left-half[
-
-### The Result:
-- Time is wasted on distractions
-- Motivation wanes
-- High cost of change is bad for business
-- Customers aren't satisfied
-
-]
-
---
-
-.right-half[
-
-### What Results look like:
-- Business asking "What are they doing?!"
-- Designers are bored and upset
-- Design is unresponsive to business needs
-- Customers aren't satisfied
-
-]
+- .de-em[Time is wasted on distractions, e.g.] **"What are they doing?!"**
+- .de-em[Motivation wanes, e.g.] **we're bored and upset**
+- .de-em[Cost of change is high, e.g.] **product is unresponsive**
+- .de-em[Customers aren't satisfied, e.g.] **FAILURE AND MISERY!!**
 
 ---
 
@@ -412,19 +350,14 @@ daily
 - Release Planning &rarr; [Big Design Refactor][3]
 
 ---
-layout: true
+class: center, middle
 
-.left-column[
 ## What might automated testing look like for design?
-]
 
 ---
-
---
-
-.right-column[
-### Lots of people are working on this
-CSSTe.st catalogs a number of techniques for testing CSS:
+name: csstest
+### Some people are working on this
+<http://CSSTe.st> catalogs a number of techniques for testing CSS:
 
 - Computed Style
 - Frozen DOM
@@ -434,64 +367,112 @@ CSSTe.st catalogs a number of techniques for testing CSS:
 - Reference browser comparison
 - Syntax checks
 
+???
+
+This is their list
+
+---
+
+### Tend to be focused on a few approaches
+
+- Screenshot Diff'ing
+- Unit Testing CSS
+- Linting
+
+---
+
+### Screenshot Diff'ing
+
+.de-em[Examples using [Wraith][wraith] and [CSS Critic][csscritic]]
+
+.left-column[![](images/wraith.png)]
+.right-column[
+![](images/css-critic.png)
 ]
 
 ---
 
-.right-column[
-### Tend to be focused on a few approaches
+### Unit Testing CSS
+.de-em[example using [Hardy.io][hardy]]
+
+```ruby
+Feature: Website layout test
+As a user I want visual consistency on the http://csste.st/ website
+
+Scenario: Content layout
+Given I visit "http://csste.st/"
+Then "section > p" should have "color" of "rgb(68, 68, 68)"
+```
+
+---
+
+### Linting
+.de-em[example using [CSS Lint][csslint]]
+
+![](images/csslint.png)
+
+---
+
+name:fixtures
+## A word about Fixtures
+
+- Content changes make many of these techniques are brittle
+- TDD has addressed this with Fixtures
+- Some work on Design [Fixtures][fixtures] can help a *lot*
+
+---
+
+class: center, middle, inverse
+
+## Automation is key
+
+---
+
+### What're the goals here?
 
 1. Brittle styles at the implementation layer (CSS)
 2. Unintended design regressions (especially in cross-browser or responsive contexts)
 3. trouble abstracting design decisions from design spandrels/affordances
 
-
-- testing CSS
-- screenshot diff'ing
-- linting
-]
-
-
---
-.right-column[
-## What's missing?
-]
+---
+class: center, middle
+### These are all very practical and tactical
 
 ---
 
-layout: false
+class: center, middle
+### What's missing?
 
-## 4. Trouble defining "done" for a design
+---
 
+class: middle, center, inverse
+
+## Defining "done" for design
 
 ???
-These are concerned with testing CSS rather than testing *design*.
+
+- These are concerned with testing CSS rather than testing *design*.
 
 ---
+class: center, middle, greenbg
 
-Automated testing for CSS isn't enough
-without automated testing for Design
-
----
-
-
+# Test *DESIGN*, not just implementation
 ???
-What are the benefits of TDD?
+
+- these steps are crucial
+- necessary but not sufficient
 
 ---
 
-- What would it look like to have a more defined definition of "done" for design?
-- What if designers could refactor with impunity?
+class: inverse
 
 ---
 
-<!-- # Interlude: ontology
-
-TODO: PUT ONTOLOGY HERE
+<!-- # Interlude: ontology TODO: PUT ONTOLOGY HERE  -->
 
 ---
- -->
 
+class: center, middle, inverse
 # Theory of TDDesign
 
 ---
@@ -502,58 +483,53 @@ TODO: PUT ONTOLOGY HERE
 - bias towards automation ~= bias towards repeatability (aka scientific method)
 
 <!-- THIS COULD BE A GOOD PLACE FOR MVD or Sus/Obj -->
-
-
 <!-- this could be a good place for  Interlude: Why Do I Care? -->
 
-<!--
+---
 
-So...
-
-# What is TDD?
- -->
+## What is TDD?
 
 ---
 
-layout: true
-## Benefits of TDD
+## Benefits of Test-Driven Development
 
----
-
-> - It gives me **confidence** that my code does what I think it does
-
-> - It confers the **ability to refactor** code without the fear that I have broken something
-
-> - It encourages a testable, and hence **modular, design**
-
-> - The **tests describe the behaviour** of the code
+>- It gives me **confidence** that my code does what I think it does
+- It confers the **ability to refactor** code without the fear that I have broken something
+- It encourages a testable, and hence **modular, design**
+- The **tests describe the behaviour** of the code
 
 [Paul Wilson](http://www.neo.com/2014/03/20/the-many-faces-of-test-driven-development)
 
 ---
+## Wouldn't the Benefits of Test-Driving be nice for Design?
+
 `s/code/product`
 
-> - It gives me **confidence** that my product does what I think it does
-
-> - It confers the **ability to refactor** product without the fear that I have broken something
-
-> - It encourages a testable, and hence **modular, design**
-
-> - The **tests describe the behavior** of the product
+> 
+- It gives me **confidence** that my product does what I think it does
+- It confers the **ability to refactor** product without the fear that I have broken something
+- It encourages a testable, and hence **modular, design**
+- The **tests describe the behavior** of the product
 
 ---
-layout: false
-## TDD: History
 
-<!-- TODO: EXPAND THIS -->
+## Where did TDD come from?
 
-> Kent Beck, who is credited with having developed or 'rediscovered'[1] the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.[2] -<http://en.wikipedia.org/wiki/Test-driven_development>
+> Kent Beck, who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.
+
+  — <http://en.wikipedia.org/wiki/Test-driven_development>
 
 ???
 
+---
+
+## History of TDD
+
 - "rediscovered" by Kent Beck
--  mainframe era
-- XP Explained - modern history
+- Mainframe era (1950s)
+- Modern history: *Extreme Programming Explained* (2000)
+
+???
 
 <http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
 <http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
@@ -564,24 +540,21 @@ layout: false
 
 ---
 
-<!-- !["images/hamazon_item_page.png"]
+<!-- !["images/hamazon_item_page.png"] -->
 
 ---
- -->
-
+ 
 **Let's say we're Pair Programming...**
 
 ---
 
-Our story is
-
-**`User should be able to add Item to Shopping Cart`**
+## `User should be able to add Item to Shopping Cart`
 
 ---
 
-## Gherkin
+### Write in Gherkin
 
-looks a lot like regular English, but with a few magic words:
+Gherkin looks a lot like regular English, but with a few magic words:
 
 - **"Given",** 
 - **"When",** 
@@ -590,183 +563,328 @@ looks a lot like regular English, but with a few magic words:
 
 ---
 
-### The Test
+### Write the Test
 
-    Given I'm a logged-in User
-    
-    When I go to the Item Page
-    
-    And I tap the "Add Item to Cart" button
-    
-    Then I should see the Cart Inventory increment
-    
-    And I should see the Cart Sub-Total increment
-    
-    And I should see the Warehouse Inventory decrement
+```ruby
+Given I am a loggedin User
+When I go to the Item Page
+And I tap the "Add Item to Cart" button
+Then I should see the Cart Inventory increment
+And I should see the Cart Sub-Total increment
+And I should see the Warehouse Inventory decrement
+```
 
 ---
 
-- readable by the computer
-- each line will fail or pass individually.
+### Rules of Testing
+
+- Test is readable by the computer
+- Each line will fail or pass individually
+
+---
+class: center, middle
+### TDD Credo: ".red[Red], .green[Green], Refactor"
 
 ---
 
-### run the test. Red! What happens?
-.right-column[
+### Write a .red[Red] Test
+
 .green[`Given I'm a logged-in User`]
-
 
 .green[`When I go to the Item Page`]
 
-
 .red[`And I tap the "Add Item to Cart" button`]
-]
 
 ???
 
-- (Let's say by this point we've already written the User login system, so that line goes green.) 
-- (...And let's say we've already written the Item Page, so that line goes green.) 
-- (there is no "Add Item to Cart" button, so that should fail.) 
-
----
-## make it green
-- go into the part of the codebase which has front-end HTML views, 
-- find the Item Page, and 
-- add `<button>Add Item to Cart</button>`. 
+- for this example let's say...
+- we've already written the User login
+- we've already written the Item Page
+- there is no button
 
 ---
 
-*That's it.* 
+### Now make it .green[Green!]
+- Go into the part of the codebase which has front-end HTML views
+- find the Item Page
+- add a `<button>Add Item to Cart</button>`
+
+---
+class: center, middle
+.f3[That's it.]
 
 ???
-No mucking with the database. The button isn't hooked up to anything. All we're trying to do is make the test pass, line by line.
+- No mucking with the database. 
+- The button isn't hooked up to anything. 
+- just trying to make the test pass, line by line.
 
 ---
 
-run the test again:
-`Given I'm a logged-in User`...GREEN!
-`When I go to the Item Page`...GREEN!
-`And I tap the "Add Item to Cart" button`...now that'll be green too!
-`Then I should see the Cart Inventory increment` will fail. 
+### Run the test again:
+
+.green[`Given I'm a logged-in User`]
+
+.green[`When I go to the Item Page`]
+
+.green[`And I tap the "Add Item to Cart" button`]
+
+.red[`Then I should see the Cart Inventory increment`]
 
 ---
 
-wire the `<button>` you just made in the front-end view up to the database, so that the Cart Inventory increments. 
+.f3[What next?]
+
+- connect the `<button>`to the database
+- `Cart Inventory` should increment
+- run the test again 
   
 ---
+
+### Run until done
+
+.green[`Given I'm a logged-in User`]
+
+.green[`When I go to the Item Page`]
+
+.green[`And I tap the "Add Item to Cart" button`]
+
+.green[`Then I should see the Cart Inventory increment`]
+
+.red[`And I should see the Cart Sub-Total increment`]
   
-Then we'll run the test again, the `Cart Inventory` line will pass, then next line (`Cart Sub-Total`) will fail, you'll make it pass, etc. etc. 
-
 ---
 
-In this manner, the whole feature will be written according to a plain-Engish User Story that anyone can read—including a non-technical Product Manager or client stakeholder—without any over-engineering or extra work.
+## Why is this important?
+
+- Anyone (client, PM) can read the plain-English test
+- No unnecessary work (over-engineering)
+- Everyone agrees on Definition of "Done"
 
 ---
+## Run ALL tests together
 
-### Running Suite
-
+- All features (e.g. Login, Item Page) have tests
+- This test is green, but run the Test Suite
+- Did this feature break anything?
 
 ???
-Now here's the fun part. Remember how we said we already built the User Login system and the Item Page? Those features will have tests too. In fact, close to 100% of the codebase is under test. So now that we've TDD'd a new feature and it's test is green, we'll run the entire Test Suite—every test that's been written to date. We already know that our feature works on its own, but now we'll get to see whether it integrates with the rest of the software.
 
+- take a few minutes, stretch our legs
 
 ---
+class: center, middle, warning
 
 ### We broke suite!
 
 ???
-We'll kick off the full test run, and it'll take a few minutes to run all the tests. Now's a great time to get up, stretch our legs, grab a drink, maybe play a game of ping pong. When we return, the test suite is red! It turns out that when we decremented Warehouse Inventory, we broke part of the warehouse management system that had already been written. Now we'll go fix our code (writing additional tests as necessary) and repeat the process until the test suite is green. Once suite is green, we can push our code to production with confidence that the software will act as expected. In this manner, we mitigate technical risks and let deployment be a purely business decision.
+
+- we broke part of the warehouse management system
 
 ---
 
-Fix it, run again, go green: Red, Green, Refactor.
+### Refactor!
+
+- Fix (refactor) our code
+- (Write additional tests as necessary)
+- Repeat until green.
+- Push to production
 
 ---
 
-I didn't go into detail here, but the Cuke tests drive out the Unit tests! Colud design testing do the same?
+### <s>F**k it,</s> Ship It!
+
+- Mitigate technical risks 
+- Deployment is a purely business decision
 
 ---
+
+class: interlude, center, middle
+
+.f1[A note on types of tests]
+
+
+???
+
+
+
+<!-- I didn't go into detail here, but the Cuke tests drive out the Unit tests! Could design testing do the same?
+ -->
+
+---
+
+## TDD Recap
+- Team agreed on Definition of Done at story level
+- .red[Red], .green[Green], Refactor!
+- Confirm new work doesn't break existing app
+
+---
+
+
+
+---
+name:methodology
+class: center, middle, inverse
+
+# Methodology of TDDesign
 
 <!-- this could be a place for# <Interlude>: TDD & Pairing -->
 <!-- this could be a place for# <Interlude>: Ping Pong Pairing -->
 
-# Methodology of TDDesign
+???
 
-## Front-End: TDD Mock-ups
-
-<!-- TODO: need IMG of wraith here -->
+So what's the design equivalent?
 
 ---
+class: center, middle
 
-## Visual Design: BDD Flows
-
-<!-- TODO: need IMG of story=>artboard here 
-
-see also [GV's Story-Centered Design](https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user)
-
--->
-
----
-
-## UI: Style Cop
-
-<!-- TODO: need IMG of styleguide, SGDD here -->
-
----
-
-## UX: Lean Hypotheses, TAT, User Testing
-
-
----
-
-# CI
-
-Any of these can / should plug into CI
-
-CI => DoD
-
-CI => Automation
-
-CI => health of design
-
----
-
-class: interlude
-
-# Interlude: The Testing Pyramid
+## Literal Interpretation for TDDesign
 
 ???
 
-- testing has a notion of different kinds of tests
-- if we start separating this out
+- we looked at a few design testing tools earlier
+- can we test-DRIVE with them?
+
+---
+class: center, middle
+## Test-Driving Technology
+
+---
+
+### Image Diff test-driving
+
+- Red Test: Mockup vs. Screenshot of implementation
+- Green Test: Image diff passes
+
+Worth it? Maybe for responsive or X-browser?
+
+???
+
+---
+
+### Unit-Testing CSS test-driving
+
+- Hardy, Quixote, Cactus, etc. could do this
+- Tedious to write the tests
+- what's the correlation between Design Decisions and CSS rules?
+
+Worth it? Sometimes, especially to protect against regressions
+
+---
+
+### Linting
+
+- Not sure that test-driving applies at all
+
+---
+class: center, middle
+## Test-Driving Technique
+
+???
+
+- can apply to all kinds of design
+
+---
+class: middle
+.f2["Process changes are much more profound then the technology that enables them."]
+
+
+—[John Albin Wilkins, Style-Guide-Driven Development: the new web development](https://www.previousnext.com.au/blog/style-guide-driven-development-new-web-development)
+
+---
+class: center, middle
+## What might TDD Design look like across different types {FE, VxD, UI, UX} of design?
+
+<!-- interlude: types of design -->
+
+---
+### Visual Design: BDD-Driven Mock Flows
+
+```ruby
+As a User
+When I go to...
+Then I should see...
+```
+
+![](images/bdd-driven-mocks.png)
+
+???
+
+see also Google Ventures' [Story-Centered Design][scd]
+
+---
+
+### UI: Style Guides & Style Cop
+
+![](images/patternlab.io.png)
+
+???
+- style-guide driven design
+- Stylecop will ensure compliance with hologram
+- Pattern.io, styleguides.io tackle this area
+
+---
+
+### UX
+- Lean Hypotheses
+- Persona.yml
+- Think-aloud Thursday
+- UserTesting.com, Ethn.io
+
+???
+
+- Hypotheses set up acceptance crit
+- Persona.yml makes personae AC
+- UserTesting.com, Ethn.io could be ways to automate via machine
+- Think-aloud Thursday is automation via practice
+
+
+---
+name: automation
+class: center, middle
+## Automation & Continuous Integration
+
+---
+class: middle, center
+### To go from "Testing" to "Test Driving", ask
+
+.f3["(How) can this plug into CI?"]
+
+---
+
+### Benefits of CI
+
+- Automation relieves monotony
+- Perpetual healthcheck on design, visible to whole team
+- Compels Definition of done
 
 ---
 
 class: center, middle, inverse
-# Pyramid Scheming
+# (Testing) Pyramid Scheme
 
 ???
 
+- different kinds of tests
 - test pyramid history: from QA, inverted
 - for our purposes: a model of how different tests fit into the picture
 
-what is it?, what do we usually call it?, how do we usually deliver it?, how could we test it?
-concept / visual language / metaphor (IA?)
-UX / wires
+---
+background-image: url(images/testing-pyramid.png)
+class: center, middle
+.f1[The Testing Pyramid]
 
-CSS
-expression: final app
+<!-- ![](images/testing-pyramid.png) -->
 
 ---
 
 name:dev-pyramid
 
 ### Development Testing Pyramid 
-|Strategy Name    |Typical Tool|Testing What?|How Many?|
-|-----------------|------------|-------------|---------|
-|Acceptance Tests |Cucumber    |Happy Path   | 1       |
-|Integration Tests|Capybara    |Intra-system | 10      |
-|Unit Tests       |Rspec       |Methods      | 100     |
+| Strategy Name     | Typical Tool | Testing What? | How Many? |
+| ----------------- | ------------ | ------------- | --------- |
+| Acceptance Tests  | Cucumber     | GUI           | 1         |
+| Integration Tests | Rspec        | API           | 10        |
+| Unit Tests        | Rspec        | Methods       | 100       |
 
 ---
 
@@ -774,56 +892,31 @@ name:design-pyramid
 
 ### Design Testing Pyramid
 
-| Type   | Strategy Name                | Possible Tool                  | Testing What?            | For every&hellip; | Order of Magnitude |
-| -----  | ---------------------------- | ------------------------------ | ------------------------ | ----------------- | -----              |
-| UX     | Test Testing                 | [Persona.yml][yml]             | Persona/TDD Integrity    | Persona           | •                  |
-| UX     | User Research                | [Ethn.io][ethnio]              | Product-market fit       | Persona           | ••                 |
-| FE     | Cross-Viewport Testing       | [Browserstack][browserstack]   | Responsive Consistency   | Viewport          | ••                 |
-| FE     | Screenshot Diff'ing          | [Wraith][wraith]               | Styleguide Compliance    | Component         | ••                 |
-| VxD    | Computed Style Unit Testing  | [Hardy][hardy]                 | Ontological Integrity    | Decision          | ••                 |
-| VxD    | CSS Unit Testing             | [Quixote][q]                   | Ontological Integrity    | Decision          | ••                 |
-| UI,VxD | Styleguide-Driven Dev't      | [Stylecop][stylecop]           | Ontological Integrity    | Decision          | ••                 |
-| UI     | Usability Testing            | [Usertesting][usertesting]     | Usability                | Interaction       | ••                 |
-| FE     | Cross-Browser Testing        | [Browsershots][browsershots]   | X-browser Consistency    | Browser           | •••                |
-| ALL    | BDR Testing                  | **[BUILD THIS!][red-ci]**      | Defining 'Done'          | Story             | •••                |
-| FE     | Screenshot Diff'ing          | [Wraith][wraith]               | Screen Regressions       | Screen            | •••                |
-| FE     | Linting                      | [CSSLint][csslint]             | Code Consistency         | Line              | •••                |
+| Type   | Strategy Name                   | Possible Tool                  | Testing What?            | For every&hellip; | Order of Magnitude |
+| -----  | ----------------------------    | ------------------------------ | ------------------------ | ----------------- | -----              |
+| UX     | Test Testing                    | [Persona.yml][yml]             | Persona/TDD Integrity    | Persona           | •                  |
+| UX     | User Research                   | [Ethn.io][ethnio]              | Product-market fit       | Persona           | ••                 |
+| FE     | Cross-Viewport Testing          | [Browserstack][browserstack]   | Responsive Consistency   | Viewport          | ••                 |
+| FE     | Screenshot Diff'ing             | [Wraith][wraith]               | Styleguide Compliance    | Component         | ••                 |
+| VxD    | Computed Style Unit Testing     | [Hardy][hardy]                 | Ontological Integrity    | Decision          | ••                 |
+| VxD    | CSS Unit Testing                | [Quixote][q]                   | Ontological Integrity    | Decision          | ••                 |
+| UI,VxD | Styleguide-Driven Dev't         | [Stylecop][stylecop]           | Ontological Integrity    | Decision          | ••                 |
+| UI     | Usability Testing               | [Usertesting][usertesting]     | Usability                | Interaction       | ••                 |
+| UX     | [Story-Centered Design][scd] CI | **[BUILD ME! :-)][red-ci]**    | Flow Coverage            | User Flow         | ••                 |
+| FE     | Cross-Browser Testing           | [Browsershots][browsershots]   | X-browser Consistency    | Browser           | •••                |
+| ALL    | BDR Testing                     | **[BUILD ME! :-)][red-ci]**    | Defining 'Done'          | Story             | •••                |
+| FE     | Screenshot Diff'ing             | [Wraith][wraith]               | Screen Regressions       | Screen            | •••                |
+| FE     | Linting                         | [CSSLint][csslint]             | Code Consistency         | Line              | •••                |
 
-<!-- |UI   | Live Styleguide            |[Hologram][hologram]          |Ontological Integrity   | Every Decision   | ••  |
- -->
-
----
-
-# Automation is crucial
-
-???
-
-It lets us build CI
-we can start w/ something trivial, and add to it as we learn
-
----
-name:fixtures
-
-## A word about Fixtures
-
-- Content changes make many of these techniques are brittle
-- TDD has addressed this with Fixtures
-- Some work on Design [Fixtures][fixtures] can help a *lot*
 
 ---
 
-# recap
-- foo 
-- bar
-- baz
-
----
-
-# ways forward
-- CI for design
-- Design Testing Pyramid
-- Gherkin-driven mockups
-- style-guide driven design
+# Recap
+- Agile techniques can help Design
+- Automation is crucial
+- Test Design (not just implementation)
+- Testing &ne; Test-Driving
+- Exciting things ahead!
 
 ---
 
@@ -834,6 +927,23 @@ name:fixtures
 - or `jonathanpberger` on github, gmail, forrst, etc...
 
 ---
+class: center, middle
+
+# Bonus!
+
+---
+name: resources
+## Resources
+
+| Concept                   | Resource                                                                             |
+| ---------------           | ----------------------------------------------------                             |
+| Atomic Design             | <http://bradfrost.com/blog/post/atomic-web-design/>                              |
+| Big Design Refactor       | <http://pivotallabs.com/big-design-refactor>                                     |
+| CSS Testing               | <http://csste.st>                                                                |
+| Pattern Lab               | <http://patternlab.io/>                                                          |
+| Story-Centered Design     | <https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user>|
+| Style Guides              | <http://styleguides.io/>                                                         |
+| Style-Guide Driven Design | <http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide> |
 
 [boulder]: https://twitter.com/jonathanpberger/status/562926708949803010
 [atomic]: http://bradfrost.com/blog/post/atomic-web-design/
@@ -853,3 +963,4 @@ name:fixtures
 [hardy]:http://hardy.io/
 [q]:https://github.com/jamesshore/quixote
 [red-ci]: https://twitter.com/jonathanpberger/status/563123069435535361
+[scd]: https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user

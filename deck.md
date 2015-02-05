@@ -45,11 +45,7 @@ Show of hands:
 ## Hypotheses
 
 1. Design practice can learn from Agile Development
---
-
 2. BUT it's not an exact 1:1 mapping
---
-
 3. The [Next Biggest Boulder][boulder] in the road: **casting emerging tools in the context of a coherant practice.**
 
 ---
@@ -83,25 +79,7 @@ class: center, middle, warning
 
 class: center, middle
 
-.f2[Testing &ne; User Testing]
-
----
-
-class: center, middle
-
-.f2[Testing &sup; User Testing]
-
----
-
-class: center, middle
-
-.f2[Testing &ne; TDD]
-
----
-
-class: center, middle
-
-.f2[Testing &sup; TDD]
+.f2[Testing vs. Test-Driving vs. User Testing]
 
 ---
 
@@ -137,7 +115,12 @@ class: center, middle, warning
 
 ---
 
+name: hurt
+layout: true
+
 ### Things that hurt
+
+---
 
 - Changing requirements
 - "Seagull" management
@@ -153,8 +136,6 @@ Through a very scientific process, the list was consolidated
 
 ---
 
-### Things that hurt
-
 - .de-em[Changing requirements, e.g.] **backlog churn**
 - .de-em["Seagull" management, e.g]. **swoop in, poop all over, fly away**
 - .de-em[Low-fidelity communication, e.g.] **not knowing what to build**
@@ -164,8 +145,12 @@ Through a very scientific process, the list was consolidated
 - .de-em[Unsustainable pace, e.g.] **late nights, weekends**
 
 ---
+layout: false
 
+layout: true
 ### The Result
+
+---
 - Time is wasted on distractions
 - Motivation wanes
 - Cost of change is high
@@ -173,14 +158,14 @@ Through a very scientific process, the list was consolidated
 
 ---
 
-### The Result
-
 - .de-em[Time is wasted on distractions, e.g.] **"What are they doing?!"**
 - .de-em[Motivation wanes, e.g.] **we're bored and upset**
 - .de-em[Cost of change is high, e.g.] **product is unresponsive**
 - .de-em[Customers aren't satisfied, e.g.] **FAILURE AND MISERY!!**
 
 ---
+
+layout: false
 
 class: center, middle, warning
 
@@ -240,9 +225,9 @@ optimize for...
 .middle-third[
 .f3[Weekly Cadence]
 
-- Retros
 - Iteration Planning
-- Release planning
+- Release Planning
+- Team Retrospective
 
 ]
 
@@ -258,33 +243,6 @@ optimize for...
 ]
 
 ---
-
-background-image: url(images/jay-z.jpg)
-class: center, middle, inverse
-
-.f1[Designers have Problems]
-
----
-
-class: center, middle
-
-.f1[How can testing help?]
-
----
-
-## \#DesignProblems
-
-- Brittle styles .de-em[at the implementation (e.g. CSS) layer]
-- Unintended design regressions .de-em[(especially in cross-browser or responsive contexts)]
-- Trouble abstracting design decisions .de-em[from affordances and spandrals; i.e., Cargo Culting Design]
-- Trouble defining "done" .de-em[for a design]
-
-???
-
-USING A HASHTAG!!
-
----
-
 ### Designers hurt too
 
 - .de-em[Changing requirements, e.g.] **backlog churn**
@@ -310,28 +268,26 @@ name: in-practice
 ## What Could Agile Design mean in practice?
 
 .left-third[
-### Continuously
+.green[### Continuously]
 
 - User-Centered Design
-- Design systems, not pages ([Atomic Design][atomic])
+- Design *Systems*, (not Pages; cf. [Atomic Design][atomic])
 - Research & User Testing
 ]
-
 .middle-third[
-### Weekly Cadence
+.green[### Weekly Cadence]
 
-- Standups: YES!
-- Retros: YES!!
-- Design stories, backlog
+- [Story-Centered Design][scd], [Design Backlog][design backlog]
 - [Big Design Refactor][bdr]
+- Team Retros: YES!
 ]
 
 .right-third[
-### Daily Cadence
-
+.green[### Daily Cadence]
+- Standups: YES!
 - Pairing: YES!
-- **TDD: this talk**
-- **CI: next talk**
+- .red[TDD: this talk]
+- .red[CI: next talk]
 ]
 
 ???
@@ -340,9 +296,9 @@ design : dev ::
 
 weekly
 
-- User-Centered Design &larr; Outside-In Development
-- Design systems, not pages &larr; Low Cost of Change
-- Tight Feedback Loops &rarr; Research, User Testing
+- UCD &larr; Outside-In Development
+- Atomic/Ontological &larr; Low Cost of Change
+- Feedback Loops &rarr; Research, User Testing
 
 daily
 
@@ -350,13 +306,272 @@ daily
 - Release Planning &rarr; [Big Design Refactor][3]
 
 ---
+
+class: center, middle, inverse
+# Theory of TDDesign
+
+---
+class:center
+name:99problems
+.f2.left[Design Problems]
+
+Are our styles brittle, i.e. do CSS changes cause regressions? • Are we catching all the regressions when they happen? • Does our design system reflect conscious decisions rather than [spandrels][spandrels], i.e., are we [Cargo Culting][cargo cult design] our design? • Do we have Personas to represent Users? Are they being used to drive product? Are they in the developers' tests? • Do we have hypotheses about our product? Are they validated? • Do we have Product-market fit? Are we building the right thing? How do we know? • Is our design Responsive? Is our Design System consistent across all responsive viewports? • Are we enshrining design decisions in a styleguide? Is that styleguide being followed? • Does our design system map to the domain we're modeling, i.e. do we have Ontological Integrity? • Is our app usable? • Are all the user-flows accounted for in the design? • Is our design consistent or progressively enhanced across all targeted browsers? • **Are we done yet?** • Do we agree on what 'Done' means? • Have our new changes broken our working app, i.e, are there regressions? • Is our code consistent with our coding style guide? • etc. etc...
+
+---
+
+background-image: url(images/jay-z.jpg)
+class: center, middle, inverse
+
+# Designers have Problems
+
+---
+
 class: center, middle
 
-## What might automated testing look like for design?
+.f1[How can testing help?]
+
+---
+
+## Automated Testing can help us focus on interesting problems instead of confirming solved problems stay solved.
+
+---
+## Test-Driving can help us define "done" and fight Scope Creep.
+
+---
+class: center, middle, inverse
+# What is TDD?
+
+---
+
+## History of TDD
+
+- Waterfall: devs write features, then QA writes tests
+- TDD "rediscovered" by Kent Beck
+- [Extreme Programming Explained][xp-explained], (2000)
+- Agile: write tests first, then features
+- Mainframe era (1950s)
+
+???
+
+<http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
+<http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
+
+---
+class: middle
+.f3[A TDD example: ]
+
+# Hamazon.com
+
+---
+
+background-image: url(images/hamazon.png)
+
+---
+
+## Our User Story
+
+.f2[`User should be able to add Item to Shopping Cart`]
+
+---
+
+### Write in Gherkin
+
+Gherkin looks a lot like regular English, but with a few magic words:
+
+- **"Given",** 
+- **"When",** 
+- **"And",** 
+- **"Then".**
+
+---
+
+### Write the Test
+
+```ruby
+Given I am a loggedin User
+When I go to the Item Page
+And I tap the "Add Item to Cart" button
+Then I should see the Cart Inventory increment
+And I should see the Cart Sub-Total increment
+And I should see the Warehouse Inventory decrement
+```
+
+---
+
+### Rules of Testing
+
+- Test is readable by the computer
+- Each line will fail or pass individually
+
+---
+class: center, middle
+## TDD Credo: ".red[Red], .green[Green], Refactor"
+
+---
+
+### Write a .red[Red] Test
+
+.green[`Given I'm a logged-in User`]
+
+.green[`When I go to the Item Page`]
+
+.red[`And I tap the "Add Item to Cart" button`]
+
+???
+
+- for this example let's say...
+- we've already written the User login
+- we've already written the Item Page
+- there is no button
+
+---
+
+### Now make it .green[Green!]
+- Go into the part of the codebase which has front-end HTML views
+- find the `Item Page`
+- add a `<button>Add Item to Cart</button>`
+
+---
+class: center, middle, inverse
+.f3[That's it.]
+
+???
+- No mucking with the database. 
+- The button isn't hooked up to anything. 
+- just trying to make the test pass, line by line.
+
+---
+### Run the test again:
+
+.green[`Given I'm a logged-in User`]
+
+.green[`When I go to the Item Page`]
+
+.green[`And I tap the "Add Item to Cart" button`]
+
+.red[`Then I should see the Cart Inventory increment`]
+
+---
+
+.f3[What next?]
+
+- connect the `<button>`to the database
+- `Cart Inventory` should increment
+- run the test again 
+  
+---
+layout:true
+### Run until done
+
+.green[`Given I'm a logged-in User`]
+
+.green[`When I go to the Item Page`]
+
+.green[`And I tap the "Add Item to Cart" button`]
+
+---
+
+.red[`Then I should see the Cart Inventory increment`]
+
+---
+
+.green[`Then I should see the Cart Inventory increment`]
+
+.red[`And I should see the Cart Sub-Total increment`]
+
+---
+
+.green[`Then I should see the Cart Inventory increment`]
+
+.green[`And I should see the Cart Sub-Total increment`]
+
+.red[`And I should see the Warehouse Inventory decrement`]
+
+---
+layout: false
+class: middle
+# Story is Done!
+
+\* Refactor as necessary
+
+---
+class: center, middle
+
+# Running Suite
+
+---
+
+## Now run ALL our tests, together
+- All features (e.g. Login, Item Page) have tests
+- This test is .green[green], but run the Test Suite
+- Did this feature break anything?
+
+???
+
+- take a few minutes, stretch our legs
+
+---
+class: center, middle, warning
+
+## We broke suite!
+
+???
+
+- we broke part of the warehouse management system
+
+---
+
+### Refactor!
+
+- Fix (refactor) our code
+- (Write additional tests as necessary)
+- Repeat until green.
+- Push to production
+
+---
+
+### <s>F**k it,</s> Ship It!
+
+- Mitigate technical risks 
+- Deployment is a purely business decision
+
+---
+
+class: interlude, center, middle
+
+.f1[A note on types of tests]
+
+
+???
+
+- GUI, integration, unit
+- tests can drive out other tests
+- testing pyramid describes ratio
+- more later on Pyramid
+
+---
+
+## TDD Benefits
+
+- Anyone (client, PM) can read the plain-English test
+- No unnecessary work (over-engineering)
+- Everyone agrees on Definition of "Done"
+
+---
+
+## TDD Recap
+- Team agreed on Definition of Done at story level
+- .red[Red], .green[Green], Refactor!
+- Broken code never ships!
+
+---
+class: center, middle, inverse
+
+# What might automated testing look like for design?
 
 ---
 name: csstest
-### Some people are working on this
+### People are working on CSS Testing
 <http://CSSTe.st> catalogs a number of techniques for testing CSS:
 
 - Computed Style
@@ -413,26 +628,11 @@ Then "section > p" should have "color" of "rgb(68, 68, 68)"
 
 ---
 
-name:fixtures
-## A word about Fixtures
-
-- Content changes make many of these techniques are brittle
-- TDD has addressed this with Fixtures
-- Some work on Design [Fixtures][fixtures] can help a *lot*
-
----
-
-class: center, middle, inverse
-
-## Automation is key
-
----
-
 ### What're the goals here?
 
-1. Brittle styles at the implementation layer (CSS)
-2. Unintended design regressions (especially in cross-browser or responsive contexts)
-3. trouble abstracting design decisions from design spandrels/affordances
+1. Catch CSS regressions (especially cross-browser, responsive)
+2. Unit-test CSS as proxy for design decisions
+3. Ensure code style is consistent
 
 ---
 class: center, middle
@@ -447,7 +647,7 @@ class: center, middle
 
 class: middle, center, inverse
 
-## Defining "done" for design
+.f1[Design!]
 
 ???
 
@@ -461,265 +661,6 @@ class: center, middle, greenbg
 
 - these steps are crucial
 - necessary but not sufficient
-
----
-
-class: inverse
-
----
-
-<!-- # Interlude: ontology TODO: PUT ONTOLOGY HERE  -->
-
----
-
-class: center, middle, inverse
-# Theory of TDDesign
-
----
-
-## How can adapting TDD for Design help?
-
-- Force a conversation about what "done" means *before* starting work
-- bias towards automation ~= bias towards repeatability (aka scientific method)
-
-<!-- THIS COULD BE A GOOD PLACE FOR MVD or Sus/Obj -->
-<!-- this could be a good place for  Interlude: Why Do I Care? -->
-
----
-
-## What is TDD?
-
----
-
-## Benefits of Test-Driven Development
-
->- It gives me **confidence** that my code does what I think it does
-- It confers the **ability to refactor** code without the fear that I have broken something
-- It encourages a testable, and hence **modular, design**
-- The **tests describe the behaviour** of the code
-
-[Paul Wilson](http://www.neo.com/2014/03/20/the-many-faces-of-test-driven-development)
-
----
-## Wouldn't the Benefits of Test-Driving be nice for Design?
-
-`s/code/product`
-
-> 
-- It gives me **confidence** that my product does what I think it does
-- It confers the **ability to refactor** product without the fear that I have broken something
-- It encourages a testable, and hence **modular, design**
-- The **tests describe the behavior** of the product
-
----
-
-## Where did TDD come from?
-
-> Kent Beck, who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.
-
-  — <http://en.wikipedia.org/wiki/Test-driven_development>
-
-???
-
----
-
-## History of TDD
-
-- "rediscovered" by Kent Beck
-- Mainframe era (1950s)
-- Modern history: *Extreme Programming Explained* (2000)
-
-???
-
-<http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
-<http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
-
----
-
-# A TDD example: Hamazon.com
-
----
-
-<!-- !["images/hamazon_item_page.png"] -->
-
----
- 
-**Let's say we're Pair Programming...**
-
----
-
-## `User should be able to add Item to Shopping Cart`
-
----
-
-### Write in Gherkin
-
-Gherkin looks a lot like regular English, but with a few magic words:
-
-- **"Given",** 
-- **"When",** 
-- **"And",** 
-- **"Then".**
-
----
-
-### Write the Test
-
-```ruby
-Given I am a loggedin User
-When I go to the Item Page
-And I tap the "Add Item to Cart" button
-Then I should see the Cart Inventory increment
-And I should see the Cart Sub-Total increment
-And I should see the Warehouse Inventory decrement
-```
-
----
-
-### Rules of Testing
-
-- Test is readable by the computer
-- Each line will fail or pass individually
-
----
-class: center, middle
-### TDD Credo: ".red[Red], .green[Green], Refactor"
-
----
-
-### Write a .red[Red] Test
-
-.green[`Given I'm a logged-in User`]
-
-.green[`When I go to the Item Page`]
-
-.red[`And I tap the "Add Item to Cart" button`]
-
-???
-
-- for this example let's say...
-- we've already written the User login
-- we've already written the Item Page
-- there is no button
-
----
-
-### Now make it .green[Green!]
-- Go into the part of the codebase which has front-end HTML views
-- find the Item Page
-- add a `<button>Add Item to Cart</button>`
-
----
-class: center, middle
-.f3[That's it.]
-
-???
-- No mucking with the database. 
-- The button isn't hooked up to anything. 
-- just trying to make the test pass, line by line.
-
----
-
-### Run the test again:
-
-.green[`Given I'm a logged-in User`]
-
-.green[`When I go to the Item Page`]
-
-.green[`And I tap the "Add Item to Cart" button`]
-
-.red[`Then I should see the Cart Inventory increment`]
-
----
-
-.f3[What next?]
-
-- connect the `<button>`to the database
-- `Cart Inventory` should increment
-- run the test again 
-  
----
-
-### Run until done
-
-.green[`Given I'm a logged-in User`]
-
-.green[`When I go to the Item Page`]
-
-.green[`And I tap the "Add Item to Cart" button`]
-
-.green[`Then I should see the Cart Inventory increment`]
-
-.red[`And I should see the Cart Sub-Total increment`]
-  
----
-
-## Why is this important?
-
-- Anyone (client, PM) can read the plain-English test
-- No unnecessary work (over-engineering)
-- Everyone agrees on Definition of "Done"
-
----
-## Run ALL tests together
-
-- All features (e.g. Login, Item Page) have tests
-- This test is green, but run the Test Suite
-- Did this feature break anything?
-
-???
-
-- take a few minutes, stretch our legs
-
----
-class: center, middle, warning
-
-### We broke suite!
-
-???
-
-- we broke part of the warehouse management system
-
----
-
-### Refactor!
-
-- Fix (refactor) our code
-- (Write additional tests as necessary)
-- Repeat until green.
-- Push to production
-
----
-
-### <s>F**k it,</s> Ship It!
-
-- Mitigate technical risks 
-- Deployment is a purely business decision
-
----
-
-class: interlude, center, middle
-
-.f1[A note on types of tests]
-
-
-???
-
-
-
-<!-- I didn't go into detail here, but the Cuke tests drive out the Unit tests! Could design testing do the same?
- -->
-
----
-
-## TDD Recap
-- Team agreed on Definition of Done at story level
-- .red[Red], .green[Green], Refactor!
-- Confirm new work doesn't break existing app
-
----
-
-
 
 ---
 name:methodology
@@ -855,7 +796,7 @@ class: middle, center
 
 - Automation relieves monotony
 - Perpetual healthcheck on design, visible to whole team
-- Compels Definition of done
+- Compels team to agree on Definition of Done
 
 ---
 
@@ -910,12 +851,20 @@ name:design-pyramid
 
 
 ---
+name: next
+class: inverse
+# What's Next?
+- Continue to improve testing tools
+- Socialize the idea of Design Health Check in CI
+- Explore where TDD ideas can help design practice as well as tooling
+
+---
 
 # Recap
 - Agile techniques can help Design
 - Automation is crucial
-- Test Design (not just implementation)
 - Testing &ne; Test-Driving
+- Test Design (not just implementation)
 - Exciting things ahead!
 
 ---
@@ -940,6 +889,7 @@ name: resources
 | Atomic Design             | <http://bradfrost.com/blog/post/atomic-web-design/>                              |
 | Big Design Refactor       | <http://pivotallabs.com/big-design-refactor>                                     |
 | CSS Testing               | <http://csste.st>                                                                |
+| Design Backlog            | <http://pivotallabs.com/manage-design-backlog/>                                                                |
 | Pattern Lab               | <http://patternlab.io/>                                                          |
 | Story-Centered Design     | <https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user>|
 | Style Guides              | <http://styleguides.io/>                                                         |
@@ -964,3 +914,7 @@ name: resources
 [q]:https://github.com/jamesshore/quixote
 [red-ci]: https://twitter.com/jonathanpberger/status/563123069435535361
 [scd]: https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user
+[design backlog]: http://pivotallabs.com/manage-design-backlog/
+[spandrels]:http://en.wikipedia.org/wiki/Spandrel_%28biology%29
+[cargo cult design]:https://twitter.com/hashtag/CargoCultDesign?src=hash
+[xp-explained]:http://www.amazon.com/Extreme-Programming-Explained-Embrace-Edition/dp/0321278658

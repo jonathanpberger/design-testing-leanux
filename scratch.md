@@ -661,3 +661,52 @@ or, more abstractly, the problems are:
 
 - [] all interludes can be in Bonus section
 - [√] might need to cover multiple types of testing when I talk about TDD in the first place; set up the testing pyramid
+
+---
+
+## Benefits of Test-Driven Development
+
+>- It gives me **confidence** that my code does what I think it does
+- It confers the **ability to refactor** code without the fear that I have broken something
+- It encourages a testable, and hence **modular, design**
+- The **tests describe the behaviour** of the code
+
+[Paul Wilson](http://www.neo.com/2014/03/20/the-many-faces-of-test-driven-development)
+
+---
+## Wouldn't the Benefits of Test-Driving be nice for Design?
+
+`s/code/product`
+
+> 
+- It gives me **confidence** that my product does what I think it does
+- It confers the **ability to refactor** product without the fear that I have broken something
+- It encourages a testable, and hence **modular, design**
+- The **tests describe the behavior** of the product
+
+---
+
+## Where did TDD come from?
+
+> Kent Beck, who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple designs and inspires confidence.
+
+  — <http://en.wikipedia.org/wiki/Test-driven_development>
+
+???
+
+---
+
+name:fixtures
+## A word about Fixtures
+
+- Content changes make many of these techniques are brittle
+- TDD has addressed this with Fixtures
+- Some work on Design [Fixtures][fixtures] can help a *lot*
+
+---
+
+class: center, middle, inverse
+
+## Automation is key
+
+---

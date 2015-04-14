@@ -64,35 +64,32 @@ class: inverse, center, middle
 
 # Pairing enables happiness
 
-- because we're social mammals
+--
 
+- because we're social mammals
 ---
 
 # Testing enables pairing
 
+--
+
 - because it answers "what should we do now?"
+--
 
 - and "why should a client pay for two people to work on this?"
-
 ---
 
 # so...
 
 --
 
---
-
 - if agile enables happiness,
-
 --
 
 - and pairing enables agile,
-
 --
 
 - and test-driven development ("TDD") enables pairing,
-
-
 ---
 
 class: center, middle, greenbg
@@ -110,13 +107,30 @@ LET THIS QUESTION HANG
 
 1. What are the benefits of TDD?
 2. How does TDD work?
-3. What could that look like for design?
+3. How could we Test-Drive Design?
+
+---
+
+class: center, middle, warning
+
+## WARNING: "Testing" is a messy word.
+
+???
+
+- In the design context, it usually means User Testing
+- User Testing is a part of this, but we're talking about a lot more
+
+---
+
+class: center, middle
+
+.f2[Testing vs. Test-Driving vs. User Testing]
 
 ---
 
 class: center, middle, inverse
 
-# The Benefits of TDD
+# 1. The Benefits of TDD
 
 ---
 
@@ -128,6 +142,10 @@ class: de-em-list
 - **Fights scope creep** by preventing over-engineering. You're just trying to make this test pass.
 - **Allows a constant health-check**, (i.e., Continuous integration) so you know when the app is broken. Business (not technology) decides when to ship.
 - **Lowers the cost of change** so product decisions can iterated on quickly and safely
+
+???
+
+# These are all critical to lean practice
 
 ---
 
@@ -142,30 +160,15 @@ class: de-em-list
 
 ???
 
-- "Improves design" is analogous to consistnancy, using a grid, etc.
+- # get away from Ninja Rock Star, towards repeatable empirical scientific methods
+- # "Improves design" is analogous to consistnancy, using a grid, etc.
 
 
 ---
 
 class: center, middle, inverse
 
-# How does TDD work?
-
----
-
-
-## History of TDD
-
-- Waterfall: devs write features, then QA writes tests
-- [Extreme Programming Explained][xp-explained], (2000)
-- Agile: write tests first, then features
-- TDD "rediscovered" by Kent Beck
-- Mainframe era (1950s)
-
-???
-
-<http://www.quora.com/Why-does-Kent-Beck-refer-to-the-rediscovery-of-test-driven-development>
-<http://derekbarber.ca/blog/2012/03/27/why-test-driven-development/>
+# 2. How does TDD work?
 
 ---
 class: middle
@@ -362,24 +365,13 @@ class: interlude, center, middle
 
 ---
 
-## TDD Benefits
-
-- Anyone (client, PM) can read the plain-English test
-- No unnecessary work (over-engineering)
-- Everyone agrees on Definition of "Done"
-
----
-
-## TDD Recap
-- Team agreed on Definition of Done at story level
-- .red[Red], .green[Green], Refactor!
-- Broken code never ships!
-
----
-
 class: center, middle, inverse
 
-# What could that TDD look like for design?
+# 3. How could we <br/> Test-drive design?
+
+???
+
+- TODO: Tighten this up. Don't need such an exhaustive catalog of what's going on out there.
 
 ---
 name: csstest
@@ -485,7 +477,7 @@ class: center, middle, inverse
 
 ???
 
-So what's the design equivalent?
+.f1[So what's the design equivalent?]
 
 ---
 class: center, middle
@@ -494,12 +486,12 @@ class: center, middle
 
 ???
 
-- we looked at Automated design testing tools earlier
-- can we test-DRIVE with them?
+- .f2[we looked at Automated design testing tools earlier]
+- .f2[can we test-DRIVE with them?]
 
 ---
 class: center, middle
-## Test-Driving Technology
+## KILL? Test-Driving the Technology
 
 ---
 
@@ -529,19 +521,31 @@ Worth it? Sometimes, especially to protect against regressions
 - Not sure that test-driving applies at all
 
 ---
-class: center, middle
-## Test-Driving Technique
 
-???
+class: middle
+.f2[“Everyone is describing the one little piece they’ve created, but don’t explain (or even reference!) the larger concepts of how all of these elements link together.”]
 
-- can apply to all kinds of design
+<br/>
+
+— [Frank Chimero, July 2014 Designer News AMA](https://news.layervault.com/comments/74344)
 
 ---
+
 class: middle
 .f2["Process changes are much more profound then the technology that enables them."]
 
+<br/>
 
 —[John Albin Wilkins, Style-Guide-Driven Development: the new web development](https://www.previousnext.com.au/blog/style-guide-driven-development-new-web-development)
+
+---
+class: center, middle
+## Test-Driving the Technique
+
+???
+
+# practical examples of TDD thinking improving design today
+
 
 ---
 class: center, middle
@@ -562,7 +566,7 @@ Then I should see...
 
 ???
 
-see also Google Ventures' [Story-Centered Design][scd]
+# see also Google Ventures' [Story-Centered Design][scd]
 
 ---
 
@@ -573,9 +577,9 @@ Style-Guide-Driven Design, Style Cop
 ![](images/patternlab.io.png)
 
 ???
-- style-guide driven design
-- Stylecop will ensure compliance with hologram
-- Pattern.io, styleguides.io tackle this area
+- ## style-guide driven design
+- ## Stylecop will ensure compliance with hologram
+- ## Pattern.io, styleguides.io tackle this area
 
 ---
 

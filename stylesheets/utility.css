@@ -101,3 +101,13 @@ code {
   background-color: #859900;
   color: white;
 }
+
+
+.de-em-list ul li {
+  color: #aaa;
+}
+
+.de-em-list ul li strong {
+  opacity: 1;
+  color: black;
+}

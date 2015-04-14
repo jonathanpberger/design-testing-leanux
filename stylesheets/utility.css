@@ -111,3 +111,9 @@ code {
   opacity: 1;
   color: black;
 }
+
+.remark-code-line {
+  font-size: 2em;
+  line-height: 1.25em;
+
+}

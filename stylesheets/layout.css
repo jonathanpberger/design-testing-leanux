@@ -22,14 +22,19 @@
 .remark-slide-footer .logo {
   position: absolute;
   left: 1em;
-  
 }
+
+.remark-slide-footer .logo img {
+  margin: 2px 0;
+  height: 56px;
+}
+
 .remark-slide-footer .twitter {
   position: absolute;
   left: 44%;
   line-height: 3em;
-  
 }
+
 .remark-slide-footer .hashtag {
   position: absolute;
   right: 1em;
@@ -44,9 +49,9 @@
   float: left;
 }
 
-.left-half h2:last-of-type, 
-.left-half h3:last-child, 
-.left-column h2:last-of-type, 
+.left-half h2:last-of-type,
+.left-half h3:last-child,
+.left-column h2:last-of-type,
 .left-column h3:last-child {
   color: #000;
 }
@@ -70,9 +75,9 @@
 
 /* Three-column layout */
 
-.left-half h2:last-of-type, 
-.left-half h3:last-child, 
-.left-column h2:last-of-type, 
+.left-half h2:last-of-type,
+.left-half h3:last-child,
+.left-column h2:last-of-type,
 .left-column h3:last-child {
   color: #000;
 }

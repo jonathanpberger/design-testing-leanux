@@ -28,9 +28,9 @@ code {
   text-shadow: 0 0 20px #333;
 }
 
-.interlude .f1, 
-.interlude .f2, 
-.interlude h1, 
+.interlude .f1,
+.interlude .f2,
+.interlude h1,
 .interlude h2 {
   color: #white;
   line-height: 0.8em;
@@ -115,5 +115,12 @@ code {
 .remark-code-line {
   font-size: 2em;
   line-height: 1.25em;
+
+}
+
+.remark-notes,
+.remark-notes-preview {
+  font-size: 2em;
+  color: purple;
 
 }

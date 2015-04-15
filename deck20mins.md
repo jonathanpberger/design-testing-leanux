@@ -46,6 +46,7 @@ class: center, middle
 - found Agile and fell in love,
 - because it addressed a lot of these problems
 
+
 ---
 
 class: center, middle
@@ -53,6 +54,7 @@ class: center, middle
 # I witnessed Agile making engineers happy
 
 ???
+
 
 - productive too
 
@@ -149,7 +151,7 @@ class: de-em-list
 
 ???
 
-# These are all critical to lean practice
+These are all critical to lean practice
 
 ---
 
@@ -164,8 +166,8 @@ class: de-em-list
 
 ???
 
-- # get away from Ninja Rock Star, towards repeatable empirical scientific methods
-- # "Improves design" is analogous to consistnancy, using a grid, etc.
+- get away from Ninja Rock Star, towards repeatable empirical scientific methods
+- "Improves design" is analogous to consistnancy, using a grid, etc.
 
 
 ---
@@ -254,6 +256,7 @@ class: center, middle, inverse
 .f3[That's it.]
 
 ???
+
 - No mucking with the database.
 - The button isn't hooked up to anything.
 - just trying to make the test pass, line by line.
@@ -490,8 +493,8 @@ class: center, middle
 
 ???
 
-- .f2[we looked at Automated design testing tools earlier]
-- .f2[can we test-DRIVE with them?]
+- we looked at Automated design testing tools earlier
+- can we test-DRIVE with them?
 
 ---
 class: center, middle
@@ -570,7 +573,7 @@ Then I should see...
 
 ???
 
-# see also Google Ventures' [Story-Centered Design][scd]
+see also Google Ventures' [Story-Centered Design][scd]
 
 ---
 
@@ -581,9 +584,9 @@ Style-Guide-Driven Design, Style Cop
 ![](images/patternlab.io.png)
 
 ???
-- ## style-guide driven design
-- ## Stylecop will ensure compliance with hologram
-- ## Pattern.io, styleguides.io tackle this area
+- style-guide driven design
+- Stylecop will ensure compliance with hologram
+- Pattern.io, styleguides.io tackle this area
 
 ---
 

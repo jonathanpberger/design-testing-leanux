@@ -1,5 +1,19 @@
 # TDD for Design Scratchpad
 
+## TODO
+- CI earlier, as gateway drug
+- tie TDD to pairing frequency
+- mention PivUI
+- recap
+  + happy
+  + ci
+- roman numerals for sections
+- add purple .title? will it work w/ footer?
+- pain => tavern
+
+
+---
+
 # Agile Manifest Principles => Problems Agile Solves
 
 > Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
@@ -80,13 +94,13 @@ Sclerosis hurts.
 [] TAT and user testing. It's important but it's not this
 [] set up Atoms vs bits, low cost of changes as new value
 [] sections: Why, Thy, Methodology
-[] Minimum Viable Deliverable => Decisions 
+[] Minimum Viable Deliverable => Decisions
 [x] interlude onology? blog it first
     - Brad frost "systems not pages = > ontology"
 [] blog fund'l insight: cost is maintaning not buliding design system
 
 ---
-  
+
 [x]  scope thy meth of testing
 
 # ******************* Shower Notes
@@ -284,16 +298,16 @@ origin story
   designer
   discovered agile
   want to bring it to design
-  
+
 what: agile
   what problems does it solve?
   how does it work?
-  
+
 what: agile problems
   sus'l pace
   better work
   focus on the right things
-  
+
 how?
   in dev:
     Pairing
@@ -312,16 +326,16 @@ who: back to my story
 
 what
   learned dev, PM
-  
+
 how does that work?
   TDD hamazon story
 
 --
 
-who: designers 
+who: designers
 what: solve agile problems
-how: break it down into the design pyramid    
-  
+how: break it down into the design pyramid
+
 conclusion
 
 --
@@ -331,7 +345,7 @@ conclusion
 - throw rocks
 - get down
 
--- 
+--
 
 - pick an idea you know something about
 - connect a bit of own story to the subject
@@ -580,7 +594,7 @@ We're not going to go through all of these
 --
 
 - Business people and developers must *work together daily* throughout the project.
- 
+
 ---
 layout: false
 
@@ -639,7 +653,7 @@ or, more abstractly, the problems are:
     - in different contexts
         + cross-browser
         + responsive
-        + 
+        +
 4. asking the right question - Product Design
 
 ---
@@ -678,7 +692,7 @@ or, more abstractly, the problems are:
 
 `s/code/product`
 
-> 
+>
 - It gives me **confidence** that my product does what I think it does
 - It confers the **ability to refactor** product without the fear that I have broken something
 - It encourages a testable, and hence **modular, design**

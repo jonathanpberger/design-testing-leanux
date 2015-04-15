@@ -92,9 +92,16 @@ class: inverse, center, middle
 --
 
 - because we're social mammals
+--
+
+- fight distraction, gain focus (your pair doesn't care about your facebook page)
+--
+
+- we're already [starting to pair-design]. How do we pair *more*?
+
 ---
 
-# Testing enables pairing
+# Test-Driving enables pairing
 
 --
 
@@ -102,6 +109,10 @@ class: inverse, center, middle
 --
 
 - and "why should a client pay for two people to work on this?"
+--
+
+- ping-pong pairing
+
 ---
 
 # so...
@@ -380,6 +391,7 @@ class: center, middle, warning
 ???
 
 - we broke part of the warehouse management system
+- cheaper to fix it now
 
 ---
 
@@ -504,15 +516,11 @@ Then "section > p" should have "color" of "rgb(68, 68, 68)"
 
 ![](images/csslint.png)
 
----
-
-### What're the goals here?
-
-1. Catch CSS regressions (especially cross-browser, responsive)
-2. Unit-test CSS as proxy for design decisions
-3. Ensure code style is consistent
+???
+could be a good health check
 
 ---
+
 class: center, middle
 ### These are all very practical and tactical
 
@@ -551,26 +559,17 @@ class: center, middle, inverse
 
 ???
 
-.f1[So what's the design equivalent?]
+So what's the design equivalent?
 
 ---
 class: center, middle
 
-## Literal Interpretation for TDDesign
+## What would the Literal Interpretation for TDDesign look like?
 
 ???
 
 - we looked at Automated design testing tools earlier
 - can we test-DRIVE with them?
-
----
-class: center, middle
-## Test-Driving the Technology
-
-???
-
-TODO: kill this?
-
 
 ---
 
@@ -602,39 +601,32 @@ Worth it? Sometimes, especially to protect against regressions
 ---
 
 class: middle
-.f2[“Everyone is describing the one little piece they’ve created, but don’t explain (or even reference!) the larger concepts of how all of these elements link together.”]
-
-<br/>
-
-— [Frank Chimero, July 2014 Designer News AMA](https://news.layervault.com/comments/74344)
-
----
-
-class: middle
 .f2["Process changes are much more profound then the technology that enables them."]
 
 <br/>
 
 —[John Albin Wilkins, Style-Guide-Driven Development: the new web development](https://www.previousnext.com.au/blog/style-guide-driven-development-new-web-development)
 
----
-class: center, middle
-## Test-Driving the Technique
-
 ???
 
-# practical examples of TDD thinking improving design today
+---
 
+class: center, middle
+
+# What if we Focus on .green[process], not just .red[technology]?
 
 ---
 class: center, middle
-## What might TDD Design look like across different types {FE, VxD, UI, UX} of design?
+
+# practical examples
+
+.de-em[.f3[How can TDD thinking help different types<br/> {FE, VxD, UI, UX} of design?]]
 
 <!-- interlude: types of design -->
 
 ---
 
-### Visual Design: BDD-Driven Mock Flows
+### VxD & UI: BDD-Driven Mock Flows
 
 ```ruby
 As a User
@@ -652,48 +644,46 @@ see also Google Ventures' [Story-Centered Design][scd]
 
 ### UI & FE: Live Style Guides & Compliance
 
-Style-Guide-Driven Design, Style Cop
+Style-Guide-Driven Design, [Hologram][]
 
 ![](images/patternlab.io.png)
 
 ???
 - style-guide driven design
-- [Stylecop][] will ensure compliance with [hologram][]
-- Pattern.io, styleguides.io tackle this area
+- [Stylecop][] can ensure compliance with [hologram][]
 - Pivotal Labs is doing some very cool work right now w/ PUI
 
 ---
 
-### UX
+### UX: Including the user
 - Persona.yml
 - UserTesting.com, Ethn.io
 - Lean Hypotheses
 
 ???
 
-- Persona.yml makes personae AC
+- Persona.yml makes personae Acceptance Criteria
 - UserTesting.com, Ethn.io could be ways to automate via machine
 - Hypotheses set up acceptance crit
 
+---
+
+class: center, middle
+
+# How can techniques inform the bigger picture?
 
 ---
 name: automation
 class: center, middle
-## Automation & Continuous Integration
 
----
-class: middle, center
-### To go from "Testing" to "Test Driving", ask
+## To go from "Testing" to "Test Driving", ask
 
-.f3["(How) can this plug into CI?"]
+.f2["(How) can this plug into an Automated .green[Health] .red[Check]?"]
 
----
-
-### Benefits of CI
-
-- Automation relieves monotony
-- Perpetual healthcheck on design, visible to whole team
-- Compels team to agree on Definition of Done
+???
+- the first thing we need to do is start breaking builds
+- socialize the notion of a transparent heath check
+- team agrees on, done means done
 
 ---
 
@@ -710,8 +700,6 @@ class: center, middle, inverse
 background-image: url(images/testing-pyramid.png)
 class: center, middle
 .f1[The Testing Pyramid]
-
-<!-- ![](images/testing-pyramid.png) -->
 
 ---
 
@@ -751,12 +739,9 @@ name:design-pyramid
 name: next
 class: inverse
 # What's Next?
-- Explore where TDD ideas can help design practice as well as tooling
+- Explore where TDD ideas can help design practice
 - Socialize the idea of Design Health Check in CI
 - Continue to improve testing tools
-
-
-
 
 ---
 

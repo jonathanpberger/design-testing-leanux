@@ -1,15 +1,15 @@
 # TDD for Design Scratchpad
 
 ## TODO
-- CI earlier, as gateway drug
-- tie TDD to pairing frequency
-- mention PivUI
-- recap
-  + happy
-  + ci
-- roman numerals for sections
-- add purple .title? will it work w/ footer?
-- pain => tavern
+- [√] CI earlier, as gateway drug
+- [√] tie TDD to pairing frequency
+- [√] mention PivUI
+- [] add recap
+   - happy
+   - ci
+- [√] roman numerals for sections
+- [x] add purple .title? will it work w/ footer?
+- [√] pain => tavern
 
 
 ---

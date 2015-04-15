@@ -27,13 +27,36 @@ Lean UX NYC
 
 # What hurts in Design?
 
+--
+.de-em-list[
+
+- **"Is the design done?"** How will we know?
+- **"What's the most important design to work on?"** Who decides?
+- **"Does this work as a design *system*?"** Is our design system intact?
+- **Communicating design** to teams of mixed expertise
+- **Broken process** or no process at all
+]
+
+???
+
+- Unsustainable pace
 - Changing requirements
 - "Seagull" management
 - Low-fidelity communication => not knowing/agreeing on what to design
 - Doing unnecessary work / designing the wrong thing
-- broken process
-- Unsustainable pace
 - working working working and then NEVER releasing
+
+---
+
+.de-em[.f3[SPOILER ALERT:]]
+--
+<br/>
+.de-em[.f3[Agile helped engineers with similar problems.]]
+--
+<br/>
+<br/>
+<br/>
+.f1[Agile can help designers too!]
 
 ---
 class: center, middle
@@ -130,7 +153,7 @@ class: center, middle, warning
 
 class: center, middle
 
-.f2[Testing vs. Test-Driving vs. User Testing]
+.f2[Testing .de-em[vs.] User Testing .de-em[vs.] Test-Driving]
 
 ---
 
@@ -167,7 +190,7 @@ class: de-em-list
 ???
 
 - get away from Ninja Rock Star, towards repeatable empirical scientific methods
-- "Improves design" is analogous to consistnancy, using a grid, etc.
+- "Improves design" is analogous to consistency, using a grid, etc.
 
 
 ---
@@ -182,15 +205,30 @@ class: middle
 
 # Hamazon.com
 
+???
+
+We're going to talk about my favorite website
+
+
 ---
 
 background-image: url(images/hamazon.png)
+
+???
+
+we'll start w/ a story
 
 ---
 
 ## Our User Story
 
 .f2[`User should be able to add Item to Shopping Cart`]
+
+???
+
+- We're pairing,
+- I'll write the test & you make it pass
+
 
 ---
 
@@ -239,10 +277,9 @@ class: center, middle
 
 ???
 
-- for this example let's say...
-- we've already written the User login
-- we've already written the Item Page
-- there is no button
+- already written *User login*
+- already written *Item Page*
+- but there is no button
 
 ---
 
@@ -253,7 +290,7 @@ class: center, middle
 
 ---
 class: center, middle, inverse
-.f3[That's it.]
+.f1[That's it.]
 
 ???
 
@@ -310,15 +347,19 @@ layout:true
 
 ---
 layout: false
-class: middle
-# Story is Done!
+class: middle, center
+# The Story is Done!
 
-\* Refactor as necessary
+.de-em[(Refactor as necessary)]
+
+???
+
+What next?
 
 ---
 class: center, middle
 
-# Running Suite
+# Running the Test Suite
 
 ---
 
@@ -342,33 +383,73 @@ class: center, middle, warning
 
 ---
 
-### Refactor!
+## Fix (& Refactor)!
 
-- Fix (refactor) our code
+- Fix (often refactor) our code
 - (Write additional tests as necessary)
 - Repeat until green.
 - Push to production
 
 ---
 
-### <s>F**k it,</s> Ship It!
+class: middle, center, interlude
+
+.f1[What's Refactoring?]
+
+???
+
+You might've heard the word as MysteryDevIncantation to goof off
+
+---
+
+class: middle, center, interlude
+
+.f2[Changing the .green[implementation] while maintaining the .green[outcome].]
+
+???
+
+Think about that idea in the context of **design systems**
+
+---
+class: center, middle
+
+## So what does the test suite gain us?
+
+---
+
+class: center, middle
+
+.f2[allows a perpetual .green[health] .red[check] for the app!]
+
+???
+
+**Continuous Integration** is often the delivery vector for this health check
+
+---
+
+## <s>F**k it,</s> Ship It!
 
 - Mitigate technical risks
 - Deployment is a purely business decision
 
+???
+
+this is crucial for *lean product development* & *testing hypotheses*
+
 ---
 
-class: interlude, center, middle
+class: center, middle
 
-.f1[A note on types of tests]
+.f2[.de-em[A brief note on] Types of tests]
 
 
 ???
 
 - GUI, integration, unit
 - tests can drive out other tests
+- provides a model for breaking down a big activity {dev,design}
 - testing pyramid describes ratio
-- more later on Pyramid
+- more later
 
 ---
 
@@ -378,36 +459,22 @@ class: center, middle, inverse
 
 ???
 
-- TODO: Tighten this up. Don't need such an exhaustive catalog of what's going on out there.
-
 ---
+
 name: csstest
 ### People are working on CSS Testing
-<http://CSSTe.st> catalogs a number of techniques for testing CSS:
 
-- Computed Style
-- Frozen DOM
-- House styleguide
-- Image diff
-- Project styleguide
-- Reference browser comparison
-- Syntax checks
-
-???
-
-This is their list
-
----
+<http://CSSTe.st> catalogs a number of techniques for testing CSS
 
 ### Tend to be focused on a few approaches
 
-- Screenshot Diff'ing
-- Unit Testing CSS
-- Linting
+1. Screenshot Diff'ing
+2. Unit Testing CSS
+3. Linting
 
 ---
 
-### Screenshot Diff'ing
+### 1. Screenshot Diff'ing
 
 .de-em[Examples using [Wraith][wraith] and [CSS Critic][csscritic]]
 
@@ -418,7 +485,7 @@ This is their list
 
 ---
 
-### Unit Testing CSS
+### 2. Unit Testing CSS
 .de-em[example using [Hardy.io][hardy]]
 
 ```ruby
@@ -432,7 +499,7 @@ Then "section > p" should have "color" of "rgb(68, 68, 68)"
 
 ---
 
-### Linting
+### 3. Linting
 .de-em[example using [CSS Lint][csslint]]
 
 ![](images/csslint.png)
@@ -498,7 +565,12 @@ class: center, middle
 
 ---
 class: center, middle
-## KILL? Test-Driving the Technology
+## Test-Driving the Technology
+
+???
+
+TODO: kill this?
+
 
 ---
 
@@ -561,6 +633,7 @@ class: center, middle
 <!-- interlude: types of design -->
 
 ---
+
 ### Visual Design: BDD-Driven Mock Flows
 
 ```ruby
@@ -577,7 +650,7 @@ see also Google Ventures' [Story-Centered Design][scd]
 
 ---
 
-### UI: Live Style Guides & Compliance
+### UI & FE: Live Style Guides & Compliance
 
 Style-Guide-Driven Design, Style Cop
 
@@ -585,8 +658,9 @@ Style-Guide-Driven Design, Style Cop
 
 ???
 - style-guide driven design
-- Stylecop will ensure compliance with hologram
+- [Stylecop][] will ensure compliance with [hologram][]
 - Pattern.io, styleguides.io tackle this area
+- Pivotal Labs is doing some very cool work right now w/ PUI
 
 ---
 
@@ -677,9 +751,9 @@ name:design-pyramid
 name: next
 class: inverse
 # What's Next?
-- Continue to improve testing tools
-- Socialize the idea of Design Health Check in CI
 - Explore where TDD ideas can help design practice as well as tooling
+- Socialize the idea of Design Health Check in CI
+- Continue to improve testing tools
 
 
 
@@ -701,17 +775,49 @@ class: center, middle
 name: resources
 ## Resources
 
-| Concept                   | Resource                                                                             |
-| ---------------           | ----------------------------------------------------                             |
-| Atomic Design             | <http://bradfrost.com/blog/post/atomic-web-design/>                              |
-| Big Design Refactor       | <http://pivotallabs.com/big-design-refactor>                                     |
-| CSS Testing               | <http://csste.st>                                                                |
-| Design Backlog            | <http://pivotallabs.com/manage-design-backlog/>                                                                |
-| Pattern Lab               | <http://patternlab.io/>                                                          |
-| Story-Centered Design     | <https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user>|
-| Style Guides              | <http://styleguides.io/>                                                         |
-| Style-Guide Driven Design | <http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide> |
-| Towards a Theory & Methodology of Test-Driven Design | <http://jonathanpberger.com/talks> |
+| Concept                                              | Resource                                                                                                   |
+| ---------------                                      | ----------------------------------------------------                                                       |
+| Atomic Design                                        | <http://bradfrost.com/blog/post/atomic-web-design/>                                                        |
+| Big Design Refactor                                  | <http://pivotallabs.com/big-design-refactor>                                                               |
+| CSS Testing                                          | <http://csste.st>                                                                                          |
+| Design Backlog                                       | <http://pivotallabs.com/manage-design-backlog/>                                                            |
+| Pattern Lab                                          | <http://patternlab.io/>                                                                                    |
+| PivotalUI testing video                              | <http://http://original.livestream.com/pivotallabs/video?clipId=pla_5a76d100-ea64-4552-9d44-15078c26ace5/> |
+| Story-Centered Design                                | <https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user>                     |
+| Style Guides                                         | <http://styleguides.io/>                                                                                   |
+| Style-Guide Driven Design                            | <http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide>                           |
+| Towards a Theory & Methodology of Test-Driven Design | <http://jonathanpberger.com/talks>                                                                         |
+
+---
+
+## MOAR!! Links
+.small[
+```
+[boulder]: https://twitter.com/jonathanpberger/status/562926708949803010
+[atomic]: http://bradfrost.com/blog/post/atomic-web-design/
+[bdr]: http://pivotallabs.com/big-design-refactor
+[fixtures]:http://en.wikipedia.org/wiki/Test_fixture
+[csscritic]:http://cburgmer.github.io/csscritic/
+[phantomcss]: https://github.com/Huddle/PhantomCSS
+[hologram]: http://trulia.github.io/hologram/
+[browsershots]:http://browsershots.org/
+[usertesting]:http://www.usertesting.com/
+[ethnio]: http://ethn.io/
+[browserstack]: http://browserstack.com
+[yml]:https://github.com/jonathanpberger/persona_dot_yml
+[stylecop]: https://github.com/pivotal/style_cop
+[wraith]: https://github.com/BBC-News/wraith
+[csslint]:https://github.com/CSSLint/csslint
+[hardy]:http://hardy.io/
+[q]:https://github.com/jamesshore/quixote
+[red-ci]: https://twitter.com/jonathanpberger/status/563123069435535361
+[scd]: https://www.gv.com/lib/story-centered-design-hacking-your-brain-to-think-like-a-user
+[design backlog]: http://pivotallabs.com/manage-design-backlog/
+[spandrels]:http://en.wikipedia.org/wiki/Spandrel_%28biology%29
+[cargo cult design]:https://twitter.com/hashtag/CargoCultDesign?src=hash
+[xp-explained]:http://www.amazon.com/Extreme-Programming-Explained-Embrace-Edition/dp/0321278658
+```
+]
 
 [boulder]: https://twitter.com/jonathanpberger/status/562926708949803010
 [atomic]: http://bradfrost.com/blog/post/atomic-web-design/
@@ -736,3 +842,12 @@ name: resources
 [spandrels]:http://en.wikipedia.org/wiki/Spandrel_%28biology%29
 [cargo cult design]:https://twitter.com/hashtag/CargoCultDesign?src=hash
 [xp-explained]:http://www.amazon.com/Extreme-Programming-Explained-Embrace-Edition/dp/0321278658
+
+---
+
+# Thanks Again!
+
+- <http://jonathanpberger.com/talks>
+- Say hi on twitter at `@jonathanpberger`
+- or `jonathanpberger` on github, gmail, forrst, etc...
+

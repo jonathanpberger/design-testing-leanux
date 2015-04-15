@@ -18,6 +18,7 @@ Lean UX NYC
 - design, code, pm
 - ~30 agile projects since 2008
 - interested in agile practice for design
+- Brooklyn born & (mostly) raised
 
 ---
 

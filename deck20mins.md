@@ -4,7 +4,7 @@ class: center middle
 
 ---
 
-# Towards a Theory & Methodology of Test-Driven Design
+# Towards a Theory & Methodology of <br/> Test-Driven Design
 
 Jonathan Berger, 2015
 

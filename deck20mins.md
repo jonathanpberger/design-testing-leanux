@@ -105,9 +105,13 @@ LET THIS QUESTION HANG
 
 # Agenda
 
-1. What are the benefits of TDD?
-2. How does TDD work?
-3. How could we Test-Drive Design?
+I. What are the benefits of TDD?
+
+
+II. How does TDD work?
+
+
+III. How could we Test-Drive Design?
 
 ---
 
@@ -130,7 +134,7 @@ class: center, middle
 
 class: center, middle, inverse
 
-# 1. The Benefits of TDD
+# I. The Benefits of TDD
 
 ---
 
@@ -168,7 +172,7 @@ class: de-em-list
 
 class: center, middle, inverse
 
-# 2. How does TDD work?
+# II. How does TDD work?
 
 ---
 class: middle
@@ -367,7 +371,7 @@ class: interlude, center, middle
 
 class: center, middle, inverse
 
-# 3. How could we <br/> Test-drive design?
+# III. How could we <br/> Test-drive design?
 
 ???
 
